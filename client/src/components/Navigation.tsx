@@ -11,58 +11,58 @@ export default function Navigation() {
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Menu", path: "/menu" },
-    { name: "Contact", path: "/contact" },
+    { name: "Reserve", path: "/contact" },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4 md:px-12 md:py-6">
-      <div className="max-w-7xl mx-auto flex items-center justify-between glass-panel rounded-full px-8 py-3">
-        <Link href="/" className="font-display text-2xl md:text-3xl font-bold text-primary tracking-wider text-glow hover:scale-105 transition-transform cursor-pointer">
-            MADHUBAN
+    <nav className="fixed top-0 left-0 right-0 z-50 px-4 py-4 md:px-8 md:py-5">
+      <div className="max-w-6xl mx-auto flex items-center justify-between glass-panel rounded-2xl px-6 py-3.5">
+        <Link href="/" className="font-display text-xl md:text-2xl font-semibold tracking-wide text-foreground hover:text-primary transition-colors duration-300 cursor-pointer">
+          <span className="text-primary">M</span>ADHUBAN
         </Link>
 
-        {/* Desktop Nav */}
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden md:flex items-center gap-2">
           {navItems.map((item) => (
             <Link 
               key={item.name} 
               href={item.path}
               className={cn(
-                "font-ui text-lg tracking-widest uppercase transition-all duration-300 hover:text-primary hover:text-glow",
+                "font-ui text-sm font-medium tracking-wide px-5 py-2 rounded-full transition-all duration-300",
                 location === item.path
-                  ? "text-primary text-glow border-b-2 border-primary"
-                  : "text-muted-foreground"
+                  ? "nav-pill-active text-primary"
+                  : "text-muted-foreground hover:text-foreground hover:bg-white/5"
               )}
+              data-testid={`nav-link-${item.name.toLowerCase()}`}
             >
               {item.name}
             </Link>
           ))}
         </div>
 
-        {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-primary"
+          className="md:hidden text-foreground hover:text-primary transition-colors"
           onClick={() => setIsOpen(!isOpen)}
+          data-testid="mobile-menu-toggle"
         >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+          {isOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
-      {/* Mobile Nav Overlay */}
       {isOpen && (
-        <div className="fixed inset-0 bg-background/95 backdrop-blur-xl z-40 flex items-center justify-center md:hidden animate-in fade-in slide-in-from-top-10">
-          <div className="flex flex-col items-center space-y-8">
+        <div className="fixed inset-0 bg-background/98 backdrop-blur-xl z-40 flex items-center justify-center md:hidden animate-in fade-in duration-300">
+          <div className="flex flex-col items-center gap-8">
             {navItems.map((item) => (
               <Link 
                 key={item.name} 
                 href={item.path}
                 onClick={() => setIsOpen(false)}
                 className={cn(
-                  "font-display text-3xl tracking-widest uppercase transition-all duration-300",
+                  "font-display text-2xl tracking-wide transition-all duration-300",
                   location === item.path
-                    ? "text-primary text-glow"
+                    ? "text-primary"
                     : "text-muted-foreground hover:text-foreground"
                 )}
+                data-testid={`mobile-nav-link-${item.name.toLowerCase()}`}
               >
                 {item.name}
               </Link>

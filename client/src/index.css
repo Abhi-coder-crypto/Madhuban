@@ -23,65 +23,69 @@
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
+  --color-gold: hsl(var(--gold));
 
-  --font-display: 'Cinzel Decorative', cursive;
-  --font-ui: 'Rajdhani', sans-serif;
-  --font-body: 'Montserrat', sans-serif;
+  --font-display: 'Playfair Display', serif;
+  --font-ui: 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-accent: 'Cormorant Garamond', serif;
 
   --radius: 0.5rem;
 }
 
 :root {
-  /* Dark Bioluminescent Theme Default */
-  --background: 220 60% 6%; /* Deep Jungle Night */
-  --foreground: 180 100% 90%; /* Pale Cyan Glow */
+  /* Premium Deep Ocean & Forest Theme */
+  --background: 185 45% 6%;
+  --foreground: 160 25% 88%;
   
-  --card: 220 50% 10%;
-  --card-foreground: 180 90% 80%;
+  --card: 185 40% 9%;
+  --card-foreground: 160 20% 85%;
   
-  --popover: 220 50% 10%;
-  --popover-foreground: 180 90% 80%;
+  --popover: 185 40% 9%;
+  --popover-foreground: 160 20% 85%;
   
-  --primary: 170 100% 50%; /* Neon Aqua/Cyan */
-  --primary-foreground: 220 60% 10%;
+  --primary: 158 50% 42%;
+  --primary-foreground: 185 45% 6%;
   
-  --secondary: 260 100% 60%; /* Electric Purple (Bioluminescence) */
+  --secondary: 185 55% 45%;
   --secondary-foreground: 210 40% 98%;
   
-  --muted: 215 40% 15%;
-  --muted-foreground: 180 30% 60%;
+  --muted: 185 30% 14%;
+  --muted-foreground: 160 18% 50%;
   
-  --accent: 150 100% 40%; /* Glowing Green */
+  --accent: 145 45% 38%;
   --accent-foreground: 210 40% 98%;
+  
+  --gold: 42 75% 55%;
   
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 210 40% 98%;
   
-  --border: 180 50% 20%;
-  --input: 180 50% 20%;
-  --ring: 170 100% 50%;
+  --border: 185 35% 18%;
+  --input: 185 35% 18%;
+  --ring: 158 50% 42%;
   
-  --radius: 0.5rem;
+  --radius: 0.625rem;
 }
 
 body {
-  @apply font-ui bg-background text-foreground antialiased selection:bg-primary selection:text-primary-foreground;
+  @apply font-ui bg-background text-foreground antialiased selection:bg-primary/30 selection:text-foreground;
   overflow-x: hidden;
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
   background: hsl(var(--background));
 }
 ::-webkit-scrollbar-thumb {
   background: hsl(var(--border));
-  border-radius: 4px;
+  border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--primary));
+  background: hsl(var(--primary) / 0.6);
 }
 
 /* Typography Utilities */
@@ -91,49 +95,127 @@ body {
 .font-ui {
   font-family: var(--font-ui);
 }
+.font-accent {
+  font-family: var(--font-accent);
+}
 
-/* Glassmorphism Utilities */
+/* Premium Glassmorphism */
 .glass-panel {
-  background: rgba(10, 20, 40, 0.4);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(0, 255, 255, 0.1);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  background: rgba(12, 35, 40, 0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(100, 180, 160, 0.15);
+  box-shadow: 
+    0 4px 24px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(15, 45, 50, 0.55);
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(0, 255, 255, 0.05);
-  transition: all 0.3s ease;
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(100, 180, 160, 0.12);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
 }
 
 .glass-card:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(0, 255, 255, 0.3);
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+  background: rgba(18, 55, 60, 0.65);
+  border-color: rgba(100, 180, 160, 0.25);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.15),
+    0 0 20px rgba(100, 180, 160, 0.08);
+  transform: translateY(-2px);
 }
 
-/* Text Glow Effects */
+/* Elegant Text Effects */
 .text-glow {
-  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.3);
+  text-shadow: 
+    0 2px 8px rgba(100, 180, 160, 0.25),
+    0 4px 16px rgba(100, 180, 160, 0.15);
 }
 
-.text-glow-purple {
-  text-shadow: 0 0 10px rgba(160, 32, 240, 0.5), 0 0 20px rgba(160, 32, 240, 0.3);
+.text-depth {
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.3),
+    0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.text-gold {
+  color: hsl(var(--gold));
+}
+
+/* Premium Button Styles */
+.btn-glass {
+  background: rgba(15, 45, 50, 0.5);
+  backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(100, 180, 160, 0.2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-glass:hover {
+  background: rgba(20, 55, 60, 0.65);
+  border-color: rgba(100, 180, 160, 0.4);
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.15),
+    0 0 24px rgba(100, 180, 160, 0.12);
+  transform: translateY(-1px);
+}
+
+/* Nav Pill Active State */
+.nav-pill-active {
+  background: rgba(100, 180, 160, 0.15);
+  box-shadow: 0 0 16px rgba(100, 180, 160, 0.1);
 }
 
 /* Animation Classes */
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  25% { transform: translateY(-4px) translateX(2px); }
+  50% { transform: translateY(-6px) translateX(0px); }
+  75% { transform: translateY(-4px) translateX(-2px); }
+}
+
+@keyframes drift {
+  0% { transform: translateX(-100vw); }
+  100% { transform: translateX(100vw); }
 }
 
 .animate-float {
-  animation: float 6s ease-in-out infinite;
+  animation: float 5s ease-in-out infinite;
 }
 
-.animate-float-delayed {
-  animation: float 8s ease-in-out infinite;
-  animation-delay: 2s;
+.animate-float-slow {
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+.animate-drift {
+  animation: drift 40s linear infinite;
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, 
+    hsl(160 40% 85%) 0%, 
+    hsl(158 50% 55%) 50%, 
+    hsl(145 45% 45%) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gold Accent */
+.gold-accent {
+  color: hsl(var(--gold));
+}
+
+.border-gold {
+  border-color: hsl(var(--gold) / 0.3);
 }

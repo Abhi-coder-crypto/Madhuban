@@ -1,0 +1,170 @@
+PAGE STRUCTURE — FRAME BY FRAME (Figma blueprint)
+📌 Desktop Frame
+
+1440 × 1024 Artboard
+Background = deep blue-green vertical gradient
+
+Top: #032E33
+
+Mid: #05474C
+
+Bottom Fade: #022225
+
+Add very subtle underwater ripple noise overlay at 8% opacity.
+
+🔷 1. NAVBAR (Glassmorphic)
+
+Component Name: Navbar.glass
+
+Property	Value
+Width	100%
+Height	80px
+Blur	12px
+Fill	rgba(255,255,255,0.12)
+Stroke Outline	1.2px — #1AFD9E (very soft glow)
+Corners	18px
+
+Inside:
+
+Left → Logo text MADHUBAN
+Font → Cinzel Decorative Bold 44px
+Tracking +2, color: gradient (leaf-green → aqua)
+
+Right → Menu items in auto-layout spacing = 48px
+
+HOME | ABOUT | MENU | CONTACT
+Font: Sora / Inter Semibold 18px
+Hover state: pill highlight + 8px vertical padding
+
+🌊 2. HERO SECTION
+
+Frame height: 720px
+
+Left Block — Text
+
+Position: 120px from left, centered vertically
+
+"MADHUBAN"
+Font: Cinzel Decorative — 92px
+Weight: Bold
+Letter spacing: +3
+Fill: Linear Gradient:
+  #56FFDA → #7AFF87
+Shadow: soft spread 30 blur, opacity 12%
+
+
+Subtitle under it:
+
+“A Luxury Nature Dining Experience”
+Font: Inter / Sora Medium — 28px
+Opacity 80%
+Margin-top: 18px
+
+CTA Buttons
+
+Auto Layout → Horizontal gap 20px
+Styles:
+
+Button 1	Button 2
+Filled Glass	Outline Glass
+Fill: rgba(255,255,255,0.15)	Stroke only: #7AFF87 1.4px
+Blur: 10px	Hover: fill turns aqua
+Radius 40px	18px vertical / 40px horizontal padding
+
+Text = Explore Menu / Book Table
+Font: Sora Semibold 18px
+
+Right Block — Graphics Element
+
+Place on the right side occupying 45% space:
+
+📌 Add 3D fish tank-cuboid glass model (just draw a transparent box using strokes & reflection overlays)
+
+Inside it add:
+
+4-6 glowing koi (vector or blend shapes)
+
+floating green leaf particles
+
+light caustics projected from above
+
+Opacity 90% — should look premium, not flashy.
+
+Slow animation later (once coded) → drift left to right at 0.06 speed
+
+🟩 3. ABOUT SECTION
+
+Background shifts → deeper teal #013436
+
+Left = image of fish-tank dining tables
+Right = text block auto-aligned vertical center
+
+Title:
+
+About Madhuban
+Playfair Display Bold 46px
+Underline highlight in neon green
+
+
+Paragraph text:
+
+Inter Regular 20px
+Line height 160%
+Max width 540px
+Opacity 70%
+
+
+Add subtle leaf veins texture behind the section at 4% opacity.
+
+🍽 4. MENU SECTION — GRID SHOWCASE
+
+Card component Menu.Card
+
+Property	Value
+Size	320 × 420
+Fill	rgba(255,255,255,0.06)
+Blur	16px
+Stroke	1px #54FFAD
+Corners	26px
+
+Hover:
+
+Scale 1.04 + subtle glow ring
+
+
+Inside card:
+
+Food image clipped in top 60%
+
+Title: Sora Bold 22px
+
+Price in soft gold #D4BF57
+
+Use grid: 3 column — 40px gap
+
+📞 5. CONTACT SECTION
+
+Darkest tone background #001B1D
+Glass input fields
+
+Name | Email | Message
+Rounded: 18px
+Padding: 16px
+Stroke: rgba(255,255,255,0.25)
+
+
+CTA Button → Send Message
+Bright leaf-green glow on hover
+
+🔥 FIGMA DELIVERABLE FILE STRUCTURE
+Page 1 – MADHUBAN WEBSITE UI
+  ⬥ Frame: Desktop 1440px
+      ▸ Navbar.glass (component)
+      ▸ Hero Section
+      ▸ 3D Tank Art Group
+      ▸ About Section
+      ▸ Menu Grid + Cards (component)
+      ▸ Contact Section
+  ⬥ Color Styles
+  ⬥ Text Styles
+  ⬥ Shadow Tokens

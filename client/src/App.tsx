@@ -1,6 +1,6 @@
 import { Switch, Route } from "wouter";
-import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
+import { queryClient } from "./lib/queryClient";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Suspense, lazy } from "react";
@@ -9,11 +9,27 @@ import Navigation from "@/components/Navigation";
 import Scene from "@/components/Scene";
 import NotFound from "@/pages/not-found";
 
-// Lazy load pages for better performance
 const Home = lazy(() => import("@/pages/Home"));
 const Menu = lazy(() => import("@/pages/Menu"));
 const About = lazy(() => import("@/pages/About"));
 const Contact = lazy(() => import("@/pages/Contact"));
+
+function LoadingScreen() {
+  return (
+    <div className="flex items-center justify-center min-h-screen">
+      <div className="text-center space-y-4">
+        <div className="font-display text-4xl text-primary animate-pulse">
+          MADHUBAN
+        </div>
+        <div className="flex items-center justify-center gap-2">
+          <div className="w-2 h-2 rounded-full bg-primary animate-bounce" style={{ animationDelay: "0ms" }} />
+          <div className="w-2 h-2 rounded-full bg-primary animate-bounce" style={{ animationDelay: "150ms" }} />
+          <div className="w-2 h-2 rounded-full bg-primary animate-bounce" style={{ animationDelay: "300ms" }} />
+        </div>
+      </div>
+    </div>
+  );
+}
 
 function Router() {
   return (
@@ -31,21 +47,14 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <div className="min-h-screen bg-background text-foreground relative overflow-hidden selection:bg-primary selection:text-black">
-          
-          {/* Global 3D Background */}
+        <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
           <Scene />
-          
-          {/* Global Navigation */}
           <Navigation />
-
-          {/* Page Content */}
           <main className="relative z-10">
-            <Suspense fallback={<div className="flex items-center justify-center min-h-screen text-primary font-display animate-pulse">LOADING ECOSYSTEM...</div>}>
+            <Suspense fallback={<LoadingScreen />}>
               <Router />
             </Suspense>
           </main>
-          
           <Toaster />
         </div>
       </TooltipProvider>

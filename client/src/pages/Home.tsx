@@ -1,66 +1,348 @@
-import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, Leaf, Droplets, UtensilsCrossed, Star, Clock, Users } from "lucide-react";
+import Footer from "@/components/Footer";
+
+const features = [
+  {
+    icon: Leaf,
+    title: "Living Greenery",
+    description: "Dine among lush tropical plants and cascading botanical wonders"
+  },
+  {
+    icon: Droplets,
+    title: "Aquarium Views",
+    description: "Elegant aquariums with graceful fish gliding past your table"
+  },
+  {
+    icon: UtensilsCrossed,
+    title: "Authentic Cuisine",
+    description: "Traditional recipes crafted with the freshest seasonal ingredients"
+  },
+  {
+    icon: Users,
+    title: "Private Events",
+    description: "Host memorable celebrations in our enchanting atmosphere"
+  }
+];
+
+const testimonials = [
+  {
+    name: "Priya Sharma",
+    text: "The most serene dining experience. The aquariums and plants create such a peaceful, luxurious atmosphere.",
+    rating: 5
+  },
+  {
+    name: "Raj Malhotra",
+    text: "Exquisite food, impeccable service, and the ambiance is truly one of a kind. A hidden gem.",
+    rating: 5
+  },
+  {
+    name: "Anita Desai",
+    text: "We celebrated our anniversary here. The fish swimming by our table made it magical.",
+    rating: 5
+  }
+];
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
-      <div className="z-10 text-center px-4 max-w-5xl mx-auto space-y-8">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
-          className="space-y-4"
-        >
-          <h2 className="font-ui text-xl md:text-2xl text-secondary tracking-[0.5em] uppercase animate-pulse">
-            Welcome to the Sanctuary
-          </h2>
-          <h1 className="font-display text-6xl md:text-8xl lg:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-b from-white via-primary to-primary/20 text-glow drop-shadow-2xl">
-            MADHUBAN
-          </h1>
-          <p className="font-ui text-lg md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Where nature and water dine together. <br />
-            <span className="text-primary/80">Bioluminescent Jungle</span> • <span className="text-secondary/80">Underwater Dining</span>
-          </p>
-        </motion.div>
+    <div className="relative">
+      <section className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-6">
+        <div className="z-10 text-center max-w-4xl mx-auto space-y-10">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="space-y-8"
+          >
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+              className="flex items-center justify-center gap-3 text-muted-foreground"
+            >
+              <span className="w-12 h-px bg-primary/40" />
+              <span className="font-ui text-sm tracking-[0.3em] uppercase">
+                Nature's Sanctuary
+              </span>
+              <span className="w-12 h-px bg-primary/40" />
+            </motion.div>
+            
+            <h1 className="font-display text-6xl md:text-7xl lg:text-8xl font-semibold tracking-wide gradient-text text-depth leading-tight">
+              MADHUBAN
+            </h1>
+            
+            <motion.p 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+              className="font-accent text-xl md:text-2xl text-muted-foreground max-w-xl mx-auto leading-relaxed italic"
+            >
+              Where lush greenery embraces the tranquil beauty of water
+            </motion.p>
+            
+            <div className="flex items-center justify-center gap-8 text-sm text-muted-foreground/70 pt-2">
+              <span className="flex items-center gap-2">
+                <Leaf className="w-4 h-4 text-primary/50" />
+                <span className="font-ui">Tropical Garden</span>
+              </span>
+              <span className="w-1.5 h-1.5 rounded-full bg-gold/50" />
+              <span className="flex items-center gap-2">
+                <Droplets className="w-4 h-4 text-secondary/50" />
+                <span className="font-ui">Aquarium Dining</span>
+              </span>
+            </div>
+          </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-          className="pt-8"
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.8 }}
+            className="pt-6 flex flex-col sm:flex-row items-center justify-center gap-5"
+          >
+            <Link href="/menu">
+              <Button 
+                size="lg" 
+                className="btn-glass text-primary text-base px-10 py-7 rounded-xl uppercase tracking-widest group"
+                data-testid="button-explore-menu"
+              >
+                <span className="flex items-center gap-3">
+                  Explore Menu 
+                  <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                </span>
+              </Button>
+            </Link>
+            
+            <Link href="/contact">
+              <Button 
+                size="lg" 
+                variant="ghost"
+                className="text-muted-foreground hover:text-foreground text-base px-8 py-7 uppercase tracking-widest transition-all duration-300"
+                data-testid="button-reserve"
+              >
+                Reserve a Table
+              </Button>
+            </Link>
+          </motion.div>
+        </div>
+        
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2, duration: 1 }}
+          className="absolute bottom-12 left-1/2 -translate-x-1/2"
         >
-          <Link href="/menu">
+          <motion.div
+            animate={{ y: [0, 6, 0] }}
+            transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+            className="text-primary/30"
+          >
+            <Droplets className="w-5 h-5" />
+          </motion.div>
+        </motion.div>
+      </section>
+
+      <section className="py-32 px-6 relative z-10">
+        <div className="max-w-5xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-20"
+          >
+            <p className="font-ui text-sm tracking-[0.2em] uppercase text-primary/60 mb-4">The Experience</p>
+            <h2 className="font-display text-4xl md:text-5xl text-foreground mb-5">
+              A Sanctuary for the Senses
+            </h2>
+            <p className="text-muted-foreground max-w-xl mx-auto font-ui">
+              Step into a world where nature embraces you at every turn
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {features.map((feature, index) => (
+              <motion.div
+                key={feature.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="glass-card p-8 rounded-2xl text-center group"
+                data-testid={`feature-${feature.title.toLowerCase().replace(/\s+/g, '-')}`}
+              >
+                <div className="w-14 h-14 mx-auto mb-5 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/15 transition-colors duration-300">
+                  <feature.icon className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="font-display text-lg text-foreground mb-2">{feature.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-32 px-6 relative z-10">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="space-y-8"
+            >
+              <div>
+                <p className="font-ui text-sm tracking-[0.2em] uppercase text-primary/60 mb-4">Our Philosophy</p>
+                <h2 className="font-display text-4xl md:text-5xl text-foreground mb-5">
+                  A Culinary Journey
+                </h2>
+              </div>
+              <p className="text-muted-foreground leading-relaxed font-ui">
+                At Madhuban, we believe dining is an art form. Our chefs craft each dish with 
+                passion, blending traditional recipes with contemporary elegance. Surrounded 
+                by cascading greenery and the gentle presence of aquatic life, every meal becomes 
+                a celebration of nature and flavor.
+              </p>
+              <div className="flex flex-wrap gap-8 pt-4">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <UtensilsCrossed className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <p className="font-display text-2xl text-foreground">50+</p>
+                    <p className="text-xs text-muted-foreground font-ui">Signature Dishes</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center">
+                    <Clock className="w-5 h-5 text-secondary" />
+                  </div>
+                  <div>
+                    <p className="font-display text-2xl text-foreground">15+</p>
+                    <p className="text-xs text-muted-foreground font-ui">Years of Excellence</p>
+                  </div>
+                </div>
+              </div>
+              <Link href="/about">
+                <Button 
+                  variant="outline" 
+                  className="mt-4 border-primary/25 text-primary hover:bg-primary/10 rounded-xl"
+                  data-testid="button-learn-more"
+                >
+                  Learn Our Story <ChevronRight className="w-4 h-4 ml-2" />
+                </Button>
+              </Link>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="glass-card p-10 rounded-2xl"
+            >
+              <div className="space-y-8">
+                <div className="flex items-center gap-5">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <Leaf className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-lg text-foreground">Fresh Ingredients</h3>
+                    <p className="text-sm text-muted-foreground">Locally sourced, organic produce</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-5">
+                  <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center">
+                    <Droplets className="w-5 h-5 text-secondary" />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-lg text-foreground">Unique Ambiance</h3>
+                    <p className="text-sm text-muted-foreground">Nature-immersive dining spaces</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-5">
+                  <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center">
+                    <Star className="w-5 h-5 text-gold" />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-lg text-foreground">Award Winning</h3>
+                    <p className="text-sm text-muted-foreground">Recognized for culinary excellence</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-32 px-6 relative z-10">
+        <div className="max-w-5xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <p className="font-ui text-sm tracking-[0.2em] uppercase text-primary/60 mb-4">Testimonials</p>
+            <h2 className="font-display text-4xl md:text-5xl text-foreground mb-5">
+              Guest Experiences
+            </h2>
+            <p className="text-muted-foreground max-w-xl mx-auto font-ui">
+              What our guests say about dining at Madhuban
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={testimonial.name}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="glass-card p-8 rounded-2xl"
+                data-testid={`testimonial-${index}`}
+              >
+                <div className="flex gap-1 mb-5">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-gold/80 text-gold/80" />
+                  ))}
+                </div>
+                <p className="text-muted-foreground text-sm mb-5 leading-relaxed font-accent italic text-base">
+                  "{testimonial.text}"
+                </p>
+                <p className="font-display text-foreground">{testimonial.name}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-32 px-6 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="max-w-3xl mx-auto text-center glass-card p-16 rounded-3xl"
+        >
+          <h2 className="font-display text-3xl md:text-4xl text-foreground mb-5">
+            Ready for an Unforgettable Experience?
+          </h2>
+          <p className="text-muted-foreground mb-10 max-w-lg mx-auto font-ui">
+            Reserve your table and immerse yourself in the enchanting world of Madhuban
+          </p>
+          <Link href="/contact">
             <Button 
               size="lg" 
-              className="bg-primary/10 hover:bg-primary/20 text-primary border border-primary/50 hover:border-primary text-lg px-12 py-8 rounded-none uppercase tracking-widest backdrop-blur-md transition-all duration-500 group relative overflow-hidden"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground px-12 py-7 rounded-xl uppercase tracking-widest text-base"
+              data-testid="button-reserve-cta"
             >
-              <span className="relative z-10 flex items-center gap-2">
-                Enter the Experience <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </span>
-              <div className="absolute inset-0 bg-primary/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
+              Make a Reservation
             </Button>
           </Link>
         </motion.div>
-      </div>
-      
-      {/* Decorative Elements */}
-      <div className="absolute bottom-10 left-10 hidden md:block">
-        <p className="font-mono text-xs text-primary/40 vertical-text tracking-widest">
-          COORDINATES: 28.6139° N, 77.2090° E
-        </p>
-      </div>
-      
-      <div className="absolute bottom-10 right-10 hidden md:block">
-        <div className="w-32 h-1 bg-primary/20 rounded-full overflow-hidden">
-          <div className="w-1/3 h-full bg-primary animate-float-delayed" />
-        </div>
-        <p className="font-mono text-xs text-primary/40 mt-2 text-right">
-          SYSTEM STATUS: ONLINE
-        </p>
-      </div>
+      </section>
+
+      <Footer />
     </div>
   );
 }
