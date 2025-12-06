@@ -1,8 +1,89 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { ChevronRight, Leaf, Droplets, UtensilsCrossed, Star, Clock, Users } from "lucide-react";
 import Footer from "@/components/Footer";
+
+function ScrollTriggeredFish({ yPosition = "20%", direction = 1, scrollOffset = 0 }: { yPosition?: string; direction?: number; scrollOffset?: number }) {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll();
+  
+  const xPosition = useTransform(
+    scrollYProgress,
+    [0, 1],
+    direction > 0 ? ["-100px", "calc(100vw + 100px)"] : ["calc(100vw + 100px)", "-100px"]
+  );
+  
+  const yFloat = useTransform(
+    scrollYProgress,
+    [0, 0.25, 0.5, 0.75, 1],
+    [0, -15, 0, 15, 0]
+  );
+
+  return (
+    <motion.div
+      ref={ref}
+      className="fixed pointer-events-none z-0"
+      style={{ 
+        top: yPosition, 
+        x: xPosition,
+        y: yFloat,
+      }}
+    >
+      <motion.svg
+        width="60"
+        height="30"
+        viewBox="0 0 60 30"
+        className="opacity-20"
+        style={{ transform: direction < 0 ? "scaleX(-1)" : "none" }}
+        animate={{ rotate: [0, 3, 0, -3, 0] }}
+        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <ellipse cx="25" cy="15" rx="20" ry="10" fill="hsl(158 50% 42%)" />
+        <polygon points="45,15 60,5 60,25" fill="hsl(158 50% 42%)" />
+        <circle cx="12" cy="12" r="2" fill="hsl(185 45% 6%)" />
+      </motion.svg>
+    </motion.div>
+  );
+}
+
+function ScrollTriggeredLeaf({ startX = "10%", size = 24, scrollMultiplier = 1 }: { startX?: string; size?: number; scrollMultiplier?: number }) {
+  const { scrollYProgress } = useScroll();
+  
+  const yPosition = useTransform(
+    scrollYProgress,
+    [0, 1],
+    ["-50px", `${100 * scrollMultiplier}vh`]
+  );
+  
+  const rotation = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [0, 360 * scrollMultiplier]
+  );
+  
+  const xFloat = useTransform(
+    scrollYProgress,
+    [0, 0.2, 0.4, 0.6, 0.8, 1],
+    [0, 20, -10, 30, -15, 0]
+  );
+
+  return (
+    <motion.div
+      className="fixed pointer-events-none z-0"
+      style={{ 
+        left: startX, 
+        top: 0,
+        y: yPosition,
+        x: xFloat,
+        rotate: rotation,
+      }}
+    >
+      <Leaf className="text-primary/25" style={{ width: size, height: size }} />
+    </motion.div>
+  );
+}
 
 const features = [
   {
@@ -30,24 +111,74 @@ const features = [
 const testimonials = [
   {
     name: "Priya Sharma",
+    initials: "PS",
+    role: "Food Critic",
     text: "The most serene dining experience. The aquariums and plants create such a peaceful, luxurious atmosphere.",
     rating: 5
   },
   {
     name: "Raj Malhotra",
+    initials: "RM",
+    role: "Regular Guest",
     text: "Exquisite food, impeccable service, and the ambiance is truly one of a kind. A hidden gem.",
     rating: 5
   },
   {
     name: "Anita Desai",
+    initials: "AD",
+    role: "Event Host",
     text: "We celebrated our anniversary here. The fish swimming by our table made it magical.",
     rating: 5
   }
 ];
 
+const galleryItems = [
+  { 
+    title: "Aquarium Dining Hall", 
+    description: "Floor-to-ceiling tanks with exotic fish",
+    icon: Droplets
+  },
+  { 
+    title: "Botanical Garden", 
+    description: "Lush tropical plants throughout",
+    icon: Leaf
+  },
+  { 
+    title: "Private Cabanas", 
+    description: "Intimate spaces for special occasions",
+    icon: Users
+  },
+  { 
+    title: "Chef's Table", 
+    description: "Watch our masters at work",
+    icon: UtensilsCrossed
+  },
+  { 
+    title: "Koi Pond Terrace", 
+    description: "Outdoor seating by the water",
+    icon: Droplets
+  },
+  { 
+    title: "Zen Lounge", 
+    description: "Relax with nature sounds",
+    icon: Leaf
+  }
+];
+
 export default function Home() {
   return (
-    <div className="relative">
+    <div className="relative overflow-hidden">
+      <ScrollTriggeredFish yPosition="15%" direction={1} />
+      <ScrollTriggeredFish yPosition="40%" direction={-1} />
+      <ScrollTriggeredFish yPosition="65%" direction={1} />
+      <ScrollTriggeredFish yPosition="85%" direction={-1} />
+      
+      <ScrollTriggeredLeaf startX="5%" size={20} scrollMultiplier={1.2} />
+      <ScrollTriggeredLeaf startX="25%" size={28} scrollMultiplier={0.8} />
+      <ScrollTriggeredLeaf startX="45%" size={22} scrollMultiplier={1.5} />
+      <ScrollTriggeredLeaf startX="70%" size={26} scrollMultiplier={1.0} />
+      <ScrollTriggeredLeaf startX="90%" size={24} scrollMultiplier={1.3} />
+      
       <section className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-6">
         <div className="z-10 text-center max-w-4xl mx-auto space-y-10">
           <motion.div
@@ -275,6 +406,54 @@ export default function Home() {
       </section>
 
       <section className="py-32 px-6 relative z-10">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <p className="font-ui text-sm tracking-[0.2em] uppercase text-primary/60 mb-4">Our Spaces</p>
+            <h2 className="font-display text-4xl md:text-5xl text-foreground mb-5">
+              Explore the Restaurant
+            </h2>
+            <p className="text-muted-foreground max-w-xl mx-auto font-ui">
+              Discover the unique environments that make Madhuban unforgettable
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {galleryItems.map((item, index) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.08 }}
+                whileHover={{ scale: 1.04, y: -5 }}
+                className="glass-card rounded-2xl overflow-hidden group cursor-pointer"
+                data-testid={`gallery-${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+              >
+                <div className="aspect-[4/3] bg-gradient-to-br from-primary/10 via-secondary/5 to-primary/15 flex items-center justify-center relative overflow-hidden">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(90,183,149,0.1),transparent_70%)]" />
+                  <motion.div
+                    animate={{ y: [0, -5, 0], rotate: [0, 5, 0] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  >
+                    <item.icon className="w-16 h-16 text-primary/40 group-hover:text-primary/60 transition-colors duration-300" />
+                  </motion.div>
+                </div>
+                <div className="p-6">
+                  <h3 className="font-display text-lg text-foreground mb-2 group-hover:text-primary transition-colors duration-300">{item.title}</h3>
+                  <p className="text-sm text-muted-foreground">{item.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-32 px-6 relative z-10">
         <div className="max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -307,10 +486,18 @@ export default function Home() {
                     <Star key={i} className="w-4 h-4 fill-gold/80 text-gold/80" />
                   ))}
                 </div>
-                <p className="text-muted-foreground text-sm mb-5 leading-relaxed font-accent italic text-base">
+                <p className="text-muted-foreground mb-6 leading-relaxed font-accent italic text-base">
                   "{testimonial.text}"
                 </p>
-                <p className="font-display text-foreground">{testimonial.name}</p>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center border border-primary/20">
+                    <span className="font-display text-sm text-foreground">{testimonial.initials}</span>
+                  </div>
+                  <div>
+                    <p className="font-display text-foreground">{testimonial.name}</p>
+                    <p className="text-xs text-muted-foreground">{testimonial.role}</p>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
