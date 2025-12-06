@@ -1,0 +1,139 @@
+Build the most advanced, hyper-immersive, sensory-bending restaurant website ever created.
+The restaurant is named *MADHUBAN*. The concept combines:
+
+🌿 Bioluminescent Jungle
+💧 Underwater Aquarium Dining Tables
+🐠 Living Ecosystem UI
+🫧 Real Physics + Cinematic FX + Spatial Audio
+
+The site must feel alive — breathing, reacting, glowing, evolving — so stunning that viewers
+stop, stare, and question reality. This experience is meant to impress, overwhelm, mesmerize —
+a playful flex of visual power & creativity.
+
+────────────────────────────────────────────
+🧠 STACK (MANDATORY)
+────────────────────────────────────────────
+React + Vite + TailwindCSS  
+Three.js / @react-three/fiber / drei  
+GSAP + Framer Motion + Postprocessing  
+WebGL shaders + GPU particles + real water simulation  
+AI-led boid fish behavior + webcam motion tracking  
+
+────────────────────────────────────────────
+📄 PAGES — FULL BUILD
+────────────────────────────────────────────
+HOME • ABOUT • MENU • CONTACT
+
+────────────────────────────────────────────
+🏠 HOME — THE JAW-DROPPER START SCREEN
+────────────────────────────────────────────
+• 3D Aquarium Dining Table centerpiece:
+  ✓ Transparent glass, refraction, wet surface reflections  
+  ✓ Dynamic caustic light patterns & volumetric god-rays  
+  ✓ Water shader with ripples + distortion lens  
+  ✓ Fish school AI with boid flocking behavior  
+  ✓ Bubbles rising with physics + collisions  
+  ✓ Underwater dust, spores, fog, depth scattering  
+  ✓ 5–10 layer parallax greenery & floating leaves  
+  ✓ Cinematic intro camera zoom + rail movement  
+  ✓ UI text materializes like underwater holograms  
+
+• Unreal+ Sensory Features:
+  → Cursor creates waves in water shader  
+  → Fish swim away from cursor proximity  
+  → Sound intensity responds to scroll  
+  → Brightness pulses to bass frequencies  
+  → Webcam optional: wave hand = fish scatter & leaves swirl
+
+────────────────────────────────────────────
+🌳 ABOUT PAGE — DREAMLIKE FOREST DIMENSION
+────────────────────────────────────────────
+• Multi-layer depth fog + breathing vines  
+• Dew-like particles, drifting mist drapes  
+• Scroll = cinematic dolly forward through jungle  
+• Text appears like growing leaf veins  
+• Night Mode → bioluminescent mushrooms + glowing roots  
+
+────────────────────────────────────────────
+🍽 MENU PAGE — 3D HOLOGRAM FOOD EXPERIENCE
+────────────────────────────────────────────
+• 3D food cards rotating in glass + neon aqua rims  
+• Hover → levitates, rotates, warps like underwater  
+• Steam & aroma FX with GPU smoke particles  
+• Scrolling uses inertia physics + magnetic drag  
+• Lightning rain cycle possible on toggle  
+• Food cards cause water ripple physics on drop  
+
+────────────────────────────────────────────
+📞 CONTACT PAGE — LIQUID RESERVATION PORTAL
+────────────────────────────────────────────
+• Liquid-ink UI inputs reacting to typing  
+• Background ripples linked to keystrokes  
+• Submit animation: water explodes into glowing leaves  
+• Spatially positioned success chimes underwater  
+• Glass-map window + pulsing neon location pin  
+
+────────────────────────────────────────────
+🔥 DARK MODE: BIOLUMINESCENT NIGHT WORLD
+────────────────────────────────────────────
+• Scene turns to glowing aquatic jungle  
+• Blue plasma halos on menu cards  
+• Fish glow neon, vines pulse like jellyfish  
+• UI shimmer like plankton in current  
+
+────────────────────────────────────────────
+🦋 CREATURE SYSTEM (MAGICAL)
+────────────────────────────────────────────
+• Bioluminescent butterflies & fireflies with motion trails  
+• Land on UI, hover scares them away  
+• Wind physics pushes them around subtly  
+
+────────────────────────────────────────────
+🦜 OPTIONAL NPC GREETER
+────────────────────────────────────────────
+• 3D animated macaw perched on vine  
+• Looks at cursor, mimics movement  
+• Speaks welcome lines w/ spatial voice:  
+  "Welcome to Madhuban — where nature and water dine together."
+
+────────────────────────────────────────────
+🧩 ASSETS (GENERATE IF MISSING)
+────────────────────────────────────────────
+/public/models/fish_tank_table.glb
+/public/models/koi_fish.glb
+/public/models/fish_school.glb
+/public/models/vine_cluster.glb
+
+/public/textures/water_caustics_hd.png
+/public/textures/glass_normal_hd.png
+/public/textures/wood_luxury.png
+/public/textures/leaves/leaf_1.png
+/public/textures/leaves/leaf_2.png
+/public/textures/leaves/leaf_3.png
+/public/textures/bioluminescent_leaf.png
+
+/public/particles/bubble.png
+/public/particles/firefly_glow.png
+
+/public/audio/forest_spatial.mp3
+/public/audio/underwater_soft_loop.mp3
+/public/audio/bass_reactive_rumble.wav
+
+────────────────────────────────────────────
+🎯 FINAL OBJECTIVE
+────────────────────────────────────────────
+Deliver a full project that feels:
+• Alive
+• Magical
+• Impossible
+• Cinematic
+• Bioluminescent
+• Physically interactive
+
+This should NOT look like a website —  
+it should feel like a portal into another reality.
+
+Build an experience that leaves people stunned,
+smiling and whispering:
+
+“How is this even a website?”
