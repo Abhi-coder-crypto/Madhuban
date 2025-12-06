@@ -1,0 +1,578 @@
+Soups and Salads - Soups
+Sweet Corn Soup
+₹149.00
+Tom Kha Soup
+₹149.00
+Manchow Soup
+A warm and comforting soup made with fresh ingredients.
+₹149.00
+Hot And Sour Soup
+₹155.00
+Noodles Soup
+₹139.00
+Tom Yum Soup
+₹149.00
+Lemon Coriander Soup
+₹149.00
+Sabz Ka Shorba
+₹259.00
+Tamatar Hari Daniya Shorba
+₹259.00
+Tomato Soup
+₹246.00
+Palak Adraki Shorba
+₹259.00
+Palak Soup
+₹246.00
+Murgh Shorba
+₹252.00
+Yakhni Shorba
+₹275.00
+Soups and Salads - Salads
+Greek Salad
+₹259.00
+Russian Salad
+₹311.00
+Oriental Salad
+₹259.00
+Green Salad
+₹259.00
+Starters - Veg Starters
+Kung Pao Potatoes
+₹332.00
+Stir Fried Vegetable
+₹355.00
+Mushroom Chilli Garlic Sauce
+₹355.00
+Paneer Crispy
+A rich and creamy dish made with Indian cottage cheese.
+₹355.00
+Kung Pao Paneer
+₹367.00
+Paneer Chilli
+[Full] A rich and creamy dish made with Indian cottage cheese.
+₹367.00
+Barbeque Paneer
+₹401.00
+Paneer Satay
+₹367.00
+Paneer Salt And Pepper
+₹367.00
+Paneer 65
+₹367.00
+Paneer Peri Peri Dry
+₹367.00
+Mushroom Chilli
+[Full] A deliciously prepared dish with authentic flavors.
+₹332.00
+Veg Crispy
+[Full] A delicious veg dish full of fresh flavors.
+₹332.00
+Veg Manchurian
+[Full] A delicious veg dish full of fresh flavors.
+₹298.00
+Paneer Mushroom Salt And Pepper
+₹390.00
+Paneer Hot Garlic
+₹378.00
+Corn Cheese Tikki
+[Full] A deliciously prepared dish with authentic flavors.
+₹367.00
+Veg Kurkure
+₹355.00
+Hara Bhara Kebab
+₹355.00
+Bhatti Ke Aloo
+₹299.00
+Veg Seekh Kebab
+₹367.00
+Veg Makhanwali Kebab
+₹383.00
+Achari Mushroom
+₹347.00
+Multani Mushroom
+₹390.00
+Tandoori Mushroom
+₹332.00
+Lal Mirch Ka Tikka
+₹367.00
+Paneer Kali Mirch Tikka
+₹390.00
+Paneer Hyderabadi Tikka
+₹390.00
+Paneer Zaffrani Tikka
+₹401.00
+Honey Mustard Paneer Tikka
+₹401.00
+Paneer Malai Tikka
+₹401.00
+Afghani Paneer Tikka
+₹329.00
+Paneer Peri Peri Tikka
+₹390.00
+Paneer Barbeque Tikka
+₹390.00
+Paneer Chutney Tikka
+₹390.00
+Paneer Achari Tikka
+₹390.00
+Paneer Hilltop
+₹401.00
+Paneer Pahadi Tikka
+₹401.00
+Paneer Angara
+₹424.00
+Paneer Cheees Kebab
+₹424.00
+Lasuni Paneer Tikka
+₹355.00
+Paneer Banjara Kebab
+₹367.00
+Kaju Paneer Seekh Kebab
+₹447.00
+Starters - Non Veg Starters
+Egg Chilli
+₹286.00
+Madhuvan Special Murgh Kebab
+₹499.00
+Chicken Hot Garlic
+₹413.00
+Chicken Peri Peri Dry
+[Full] A flavorful chicken dish cooked with aromatic spices.
+₹424.00
+Chicken Chilli Dry
+₹413.00
+Chicken Crispy
+[Full] A flavorful chicken dish cooked with aromatic spices.
+₹424.00
+Chicken Manchurian
+₹424.00
+Chicken Kung Pao
+₹447.00
+Chicken Sesame Dry
+₹436.00
+Chicken Honey Crispy
+[Full] A flavorful chicken dish cooked with aromatic spices.
+₹447.00
+Lasuni Murgh Kebab
+₹401.00
+Murgh Pahadi Kebab
+[Full] A smoky and flavorful grilled kebab dish.
+₹424.00
+Chicken Lollipop
+[Full] A flavorful chicken dish cooked with aromatic spices.
+₹436.00
+Murgh Tikka
+₹401.00
+Chicken Drumstick Heaven
+₹447.00
+Murgh Hyderabadi Tikka
+₹436.00
+Murgh Afghani Kebab
+₹424.00
+Murgh Angara Kebab
+₹436.00
+Murgh Lemon Tikka
+₹424.00
+Murgh Rozali Kebab
+₹436.00
+Murgh Arbi Tandoori
+₹447.00
+Murgh Banjara Kebab
+₹424.00
+Murgh Tandoori Lollipop
+[Full] A deliciously prepared dish with authentic flavors.
+₹436.00
+Murgh Malai Kebab
+₹436.00
+Murgh Tandoori
+[Full] A deliciously prepared dish with authentic flavors.
+₹419.00
+Murgh Maratha
+₹424.00
+Murgh Seekh Kebab
+₹447.00
+Murgh Hazari Kebab
+₹424.00
+Murgh Peri Peri Kebab
+₹436.00
+Murgh Barbeque Kebab
+₹436.00
+Murgh Talvar Kebab
+₹436.00
+Murgh Alishan Kebab
+₹424.00
+Murgh Chun Chun Kebab
+₹424.00
+Murgh Achari Kebab
+₹424.00
+Mutton Seekh Kebab
+₹586.00
+Roasted Lamb Chilli
+₹563.00
+Basa Fish Tikka
+₹459.00
+Rawas Fish Tikka
+₹459.00
+Basa Fish Lasuni Tikka
+₹459.00
+Rawas Fish Lasuni Tikka
+₹459.00
+Fish Finger
+₹459.00
+Chilli Garlic Fish
+₹545.00
+Fish Chilli
+₹519.00
+Peri Peri Fish Dry
+₹545.00
+Lasuni Jhinga
+₹675.00
+Tandoori Prawns
+₹675.00
+Prawns Rava Fry
+₹499.00
+Butter Garlic Prawns
+₹571.00
+Prawns Tawa Fry
+₹499.00
+Prawns With Honey Chilli
+₹493.00
+Main Course - Veg Main Course
+Madhuvan Special Veg
+[Full] A delicious veg dish full of fresh flavors.
+₹441.00
+Paneer Bhurji
+₹350.00
+Paneer Makhanwala
+[Full] A rich and creamy dish made with Indian cottage cheese.
+₹363.00
+Paneer Lababdar
+[Full] A rich and creamy dish made with Indian cottage cheese.
+₹389.00
+Palak Paneer
+[Full] A rich and creamy dish made with Indian cottage cheese.
+₹363.00
+Palak Paneer Makhani
+₹389.00
+Paneer Bhuna Masala
+[Full] A rich and creamy dish made with Indian cottage cheese.
+₹415.00
+Paneer Baby Corn Kadhai
+₹389.00
+Paneer Tikka Masala
+[Full] A rich and creamy dish made with Indian cottage cheese.
+₹415.00
+Paneer Lahori
+₹389.00
+Veg Kolhapuri
+[Full] A delicious veg dish full of fresh flavors.
+₹363.00
+Veg Korma
+₹376.00
+Veg Diwani Handi
+₹376.00
+Veg Falguni
+₹402.00
+Veg Keema Masala
+₹402.00
+Veg Lahori Kofta
+[Full] A delicious veg dish full of fresh flavors.
+₹402.00
+Veg Maharaja
+[Full] A delicious veg dish full of fresh flavors.
+₹376.00
+Veg Lajawab
+₹389.00
+Paneer Mushroom Kadhai
+[Full] A rich and creamy dish made with Indian cottage cheese.
+₹389.00
+Bhindi Do Pyaaza
+₹363.00
+Veg Kadhai
+[Full] A delicious veg dish full of fresh flavors.
+₹363.00
+Veg Tawa
+₹376.00
+Kaju Masala
+[Full] A deliciously prepared dish with authentic flavors.
+₹441.00
+Kaju Butter Masala
+₹441.00
+Paneer Butter Masala
+[Full] A rich and creamy dish made with Indian cottage cheese.
+₹402.00
+Paneer Amritsari
+₹389.00
+Paneer Matar Masala
+[Full] A rich and creamy dish made with Indian cottage cheese.
+₹350.00
+Veg Peshawari
+₹376.00
+Dal Fry
+[Full] A comforting lentil dish cooked with Indian spices and ghee.
+₹274.00
+Dal Tadka
+[Full] A comforting lentil dish cooked with Indian spices and ghee.
+₹299.00
+Dal Palak
+₹299.00
+Dal Kolhapuri
+₹299.00
+Main Course - Non Veg Main Course
+Murgh Butter Masala
+[Full] A deliciously prepared dish with authentic flavors.
+₹467.00
+Murgh Tikka Masala
+[Full] A deliciously prepared dish with authentic flavors.
+₹443.00
+Murgh Kadhai
+[Full] A deliciously prepared dish with authentic flavors.
+₹443.00
+Murgh Sultani
+₹443.00
+Murgh Angara Masala
+[Full] A deliciously prepared dish with authentic flavors.
+₹479.00
+Butter Murgh
+[Full] A deliciously prepared dish with authentic flavors.
+₹467.00
+Murgh Doaba
+₹479.00
+Murgh Mumtaz
+₹455.00
+Murgh Lahori
+₹443.00
+Murgh Toofani
+₹455.00
+Murgh Kolhapuri
+₹443.00
+Murgh Lazeez
+₹443.00
+Murgh Rara Masala
+₹467.00
+Murgh Lababdar
+₹493.00
+Murgh Musallam
+₹569.00
+Murgh Lapeta
+₹519.00
+Murgh Malvani Handi
+[Malvani / Agri / Khandeshi]
+₹519.00
+Murgh Agri Handi
+[Malvani / Agri / Khandeshi]
+₹519.00
+Murgh Khandeshi Handi
+[Malvani / Agri / Khandeshi]
+₹519.00
+Mutton Rogan Josh
+₹585.00
+Mutton Keema Masala
+₹551.00
+Mutton Sukha
+₹539.00
+Mutton Lapeta
+₹719.00
+Mutton Malvani Handi
+[Malvani / Agri / Khandeshi]
+₹669.00
+Mutton Agri Handi
+[Malvani / Agri / Khandeshi]
+₹669.00
+Mutton Khandeshi Handi
+[Malvani / Agri / Khandeshi]
+₹669.00
+Mutton Goan Handi
+[Malvani / Agri / Khandeshi]
+₹649.00
+Prawns Curry
+₹599.00
+Breads
+Aloo Paratha
+₹241.00
+Missi Roti
+A deliciously prepared dish with authentic flavors.
+₹87.00
+Kulcha
+A deliciously prepared dish with authentic flavors.
+₹76.00
+Roti Ki Tokri
+₹406.00
+Laccha Paratha
+A crispy, buttery Indian flatbread stuffed with fillings.
+₹87.00
+Butter Naan
+A deliciously prepared dish with authentic flavors.
+₹76.00
+Naan
+A deliciously prepared dish with authentic flavors.
+₹65.00
+Butter Roti
+A deliciously prepared dish with authentic flavors.
+₹50.00
+Plain Roti
+A deliciously prepared dish with authentic flavors.
+₹45.00
+Cheese Garlic Naan
+₹219.00
+Garlic Naan
+A deliciously prepared dish with authentic flavors.
+₹109.00
+Rice and Biryani - Rice
+Palak Khichdi
+₹347.00
+Dal Khichdi
+[Full] A comforting lentil dish cooked with Indian spices and ghee.
+₹347.00
+Steamed Rice
+₹199.00
+Jeera Rice
+[Full] A deliciously prepared dish with authentic flavors.
+₹240.00
+Veg Pulao
+₹269.00
+Paneer Pulao
+[Veg preparation] [Full] A mildly spiced, aromatic rice dish with vegetables or meat.
+₹321.00
+Rice and Biryani - Biryani
+Madhuvan Special Biryani
+[Veg preparation] [Full] A fragrant and spicy rice dish cooked with meat or vegetables.
+₹426.00
+Veg Dum Biryani
+[Veg preparation] [Full] A fragrant and spicy rice dish cooked with meat or vegetables.
+₹335.00
+Mushroom Biryani
+[Veg preparation] [Full] A fragrant and spicy rice dish cooked with meat or vegetables.
+₹347.00
+Paneer Biryani
+[Veg preparation] [Full] A fragrant and spicy rice dish cooked with meat or vegetables.
+₹353.00
+Madhuvan Special Murgh Biryani
+[Full] A fragrant and spicy rice dish cooked with meat or vegetables.
+₹511.00
+Murgh Dum Biryani
+[Full] A fragrant and spicy rice dish cooked with meat or vegetables.
+₹389.00
+Murgh Hyderabadi Biryani
+[Full] A fragrant and spicy rice dish cooked with meat or vegetables.
+₹389.00
+Mutton Dum Biryani
+[Full] A fragrant and spicy rice dish cooked with meat or vegetables.
+₹511.00
+Prawns Biryani
+[Full] A fragrant and spicy rice dish cooked with meat or vegetables.
+₹548.00
+Fried Rice and Noodles - Fried Rice
+Veg Fried Rice
+[Full] A savory rice dish stir fried with vegetables and spices.
+₹309.00
+Veg Schezwan Fried Rice
+[Full] A savory rice dish stir fried with vegetables and spices.
+₹332.00
+Veg Triple Schezwan Fried Rice
+[Full] A savory rice dish stir fried with vegetables and spices.
+₹390.00
+Veg Green Thai Curry Fried Rice
+₹424.00
+Veg Singapuri Fried Rice
+₹390.00
+Veg Red Thai Curry Fried Rice
+₹424.00
+Veg Hong Kong Fried Rice
+₹390.00
+Veg Korean Fried Rice
+₹390.00
+Veg Chilli Fried Rice
+₹367.00
+Veg Burnt Garlic Fried Rice
+₹390.00
+Egg Fried Rice
+[Full] A savory rice dish stir fried with vegetables and spices.
+₹329.00
+Chicken Fried Rice
+[Full] A savory rice dish stir fried with vegetables and spices.
+₹367.00
+Chicken Schezwan Fried Rice
+[Full] A savory rice dish stir fried with vegetables and spices.
+₹424.00
+Chicken Triple Fried Rice
+[Full] A savory rice dish stir fried with vegetables and spices.
+₹424.00
+Chicken Singapore Fried Rice
+₹436.00
+Chicken Burnt Garlic Fried Rice
+₹447.00
+Chicken Korean Fried Rice
+₹436.00
+Chicken Thai Green Curry Fried Rice
+₹459.00
+Chicken Thai Red Curry Fried Rice
+₹459.00
+Fried Rice and Noodles - Noodles
+Veg Hakka Noodles
+[Full] A stir fried noodles dish tossed with vegetables and sauces.
+₹309.00
+Veg Schezwan Noodles
+₹332.00
+Veg Schezwan Triple Noodles
+₹424.00
+Veg Korean Noodles
+₹413.00
+Burnt Garlic Noodles
+₹390.00
+Veg Chowmein
+₹436.00
+Chicken Schezwan Noodles
+[Full] A stir fried noodles dish tossed with vegetables and sauces.
+₹424.00
+Chicken Triple Noodles
+₹424.00
+Chicken Singapore Noodles
+₹436.00
+Chicken Burnt Garlic Noodles
+₹447.00
+Chicken Korean Noodles
+₹436.00
+Chicken Thai Green Curry Noodles
+₹459.00
+Chicken Thai Red Curry Noodles
+₹459.00
+Snacks
+Veg Spring Roll
+₹332.00
+French Fries
+₹252.00
+Peri Peri Fries
+₹263.00
+Corn Cheese Ball
+A deliciously prepared dish with authentic flavors.
+₹390.00
+Accompaniments
+Veg Raita
+₹220.00
+Boondi Raita
+₹220.00
+Pineapple Raita
+₹220.00
+Roasted Papad
+₹68.00
+Fried Papad
+₹68.00
+Masala Papad
+₹114.00
+Drinks (Beverages)
+Cold Coffee Milkshake
+₹263.00
+Banoffee Milkshake
+₹287.00
+Brownie Milkshake
+₹323.00
+Oreo Milkshake
+₹299.00
+Vanilla Milkshake
+₹287.00
+Chocolate Milkshake
+₹287.00
+Strawberry Milkshake
+₹299.00
