@@ -10,6 +10,9 @@ import restaurantInterior3 from '@assets/stock_images/restaurant_interior__27062
 import indianFood1 from '@assets/stock_images/indian_food_platter__4302e642.jpg';
 import aquarium1 from '@assets/stock_images/fish_aquarium_restau_3c1118a7.jpg';
 import aquarium2 from '@assets/stock_images/fish_aquarium_restau_a361cd98.jpg';
+import freshIngredientsImg from '@assets/stock_images/fresh_organic_vegeta_7b6b8c18.jpg';
+import uniqueAmbianceImg from '@assets/stock_images/tropical_plants_rest_576923c6.jpg';
+import awardWinningImg from '@assets/stock_images/gold_award_trophy_ex_922e8285.jpg';
 
 const features = [
   {
@@ -300,8 +303,8 @@ export default function Home() {
             >
               <div className="space-y-8">
                 <div className="flex items-center gap-5">
-                  <div className="w-12 h-12 rounded-xl bg-primary/8 flex items-center justify-center">
-                    <Leaf className="w-5 h-5 text-primary/80" />
+                  <div className="w-14 h-14 rounded-xl overflow-hidden border border-primary/20 flex-shrink-0">
+                    <img src={freshIngredientsImg} alt="Fresh Ingredients" className="w-full h-full object-cover" />
                   </div>
                   <div>
                     <h3 className="font-display text-lg text-foreground tracking-wide">Fresh Ingredients</h3>
@@ -309,8 +312,8 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="flex items-center gap-5">
-                  <div className="w-12 h-12 rounded-xl bg-secondary/8 flex items-center justify-center">
-                    <Droplets className="w-5 h-5 text-secondary/80" />
+                  <div className="w-14 h-14 rounded-xl overflow-hidden border border-secondary/20 flex-shrink-0">
+                    <img src={uniqueAmbianceImg} alt="Unique Ambiance" className="w-full h-full object-cover" />
                   </div>
                   <div>
                     <h3 className="font-display text-lg text-foreground tracking-wide">Unique Ambiance</h3>
@@ -318,8 +321,8 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="flex items-center gap-5">
-                  <div className="w-12 h-12 rounded-xl bg-accent/8 flex items-center justify-center">
-                    <Star className="w-5 h-5 text-accent/80" />
+                  <div className="w-14 h-14 rounded-xl overflow-hidden border border-accent/20 flex-shrink-0">
+                    <img src={awardWinningImg} alt="Award Winning" className="w-full h-full object-cover" />
                   </div>
                   <div>
                     <h3 className="font-display text-lg text-foreground tracking-wide">Award Winning</h3>
