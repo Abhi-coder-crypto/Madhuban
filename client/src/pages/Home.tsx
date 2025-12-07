@@ -24,6 +24,7 @@ import drinkImg from '@assets/drink_1765083959183.png';
 import aquariumImg from '@assets/aqa_1765083959184.png';
 import privateCabanasImg from '@assets/image_1765084555415.png';
 import outdoorTerraceImg from '@assets/image_1765084574850.png';
+import restaurantExteriorImg from '@assets/image_1765114651153.png';
 
 const features = [
   {
@@ -133,96 +134,114 @@ export default function Home() {
       <section className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-6">
         <div className="absolute inset-0 z-0">
           <img 
-            src={restaurantInterior1} 
-            alt="Madhuban Restaurant Interior" 
+            src={restaurantExteriorImg} 
+            alt="Madhuban Greens Restaurant" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 hero-overlay" />
-          <div className="absolute inset-0 bg-gradient-to-r from-background/60 via-transparent to-background/60" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0B3D2E]/70 via-[#0B3D2E]/50 to-[#0B3D2E]/95" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0B3D2E]/40 via-transparent to-[#0B3D2E]/40" />
         </div>
 
-        <div className="z-10 text-center max-w-5xl mx-auto space-y-10">
+        <div className="z-10 text-center max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
-            className="space-y-8"
+            className="space-y-6"
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-              className="flex items-center justify-center gap-4"
+              transition={{ delay: 0.2, duration: 0.8 }}
+              className="flex items-center justify-center gap-6"
             >
-              <span className="w-20 h-px bg-gradient-to-r from-transparent via-primary/60 to-primary/20" />
-              <Sparkles className="w-5 h-5 text-primary animate-pulse" />
-              <span className="font-body text-sm tracking-[0.4em] uppercase text-primary/80">
-                Experience Excellence
-              </span>
-              <Sparkles className="w-5 h-5 text-primary animate-pulse" />
-              <span className="w-20 h-px bg-gradient-to-l from-transparent via-primary/60 to-primary/20" />
+              <span className="w-24 h-px bg-gradient-to-r from-transparent via-[#6FBF5B]/60 to-[#6FBF5B]/30" />
+              <Leaf className="w-6 h-6 text-[#6FBF5B] animate-pulse" />
+              <span className="w-24 h-px bg-gradient-to-l from-transparent via-[#6FBF5B]/60 to-[#6FBF5B]/30" />
             </motion.div>
+            
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className="font-body text-sm tracking-[0.5em] uppercase text-[#E8C46A]/90"
+            >
+              Welcome to
+            </motion.p>
             
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 1 }}
-              className="font-display text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium tracking-widest gradient-text text-depth leading-relaxed"
+              className="font-display text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-medium tracking-[0.2em] leading-none"
+              style={{
+                background: 'linear-gradient(135deg, #E8C46A 0%, #6FBF5B 50%, #E8C46A 100%)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                textShadow: '0 0 80px rgba(111, 191, 91, 0.3)'
+              }}
             >
               MADHUBAN
             </motion.h1>
             
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.6, duration: 0.8 }}
+              className="font-display text-2xl md:text-3xl tracking-[0.3em] uppercase text-[#6FBF5B]/80"
+            >
+              GREENS
+            </motion.p>
+            
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.7, duration: 1 }}
-              className="relative"
+              transition={{ delay: 0.8, duration: 1 }}
+              className="pt-4"
             >
-              <p className="font-heading text-xl md:text-2xl lg:text-3xl text-foreground/90 max-w-2xl mx-auto leading-relaxed italic">
-                Where culinary artistry meets{" "}
-                <span className="text-primary">nature's embrace</span>
+              <p className="font-heading text-xl md:text-2xl text-[#F4F1E9]/80 max-w-2xl mx-auto leading-relaxed italic">
+                Where nature meets{" "}
+                <span className="text-[#E8C46A]">culinary excellence</span>
               </p>
             </motion.div>
-            
+
             <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.9, duration: 1 }}
-              className="flex items-center justify-center gap-8 md:gap-12 text-sm text-muted-foreground pt-4 flex-wrap"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1, duration: 0.8 }}
+              className="pt-8 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto"
             >
-              <span className="flex items-center gap-3 group">
-                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
-                  <Leaf className="w-5 h-5 text-primary/80" />
-                </div>
-                <span className="font-body tracking-wide">Tropical Garden</span>
-              </span>
-              <span className="w-1.5 h-1.5 rounded-full bg-primary/40" />
-              <span className="flex items-center gap-3 group">
-                <div className="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/20 transition-colors duration-300">
-                  <Droplets className="w-5 h-5 text-secondary/80" />
-                </div>
-                <span className="font-body tracking-wide">Aquarium Dining</span>
-              </span>
-              <span className="w-1.5 h-1.5 rounded-full bg-primary/40" />
-              <span className="flex items-center gap-3 group">
-                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
-                  <Award className="w-5 h-5 text-primary/80" />
-                </div>
-                <span className="font-body tracking-wide">Award Winning</span>
-              </span>
+              <div className="flex flex-col items-center gap-3 p-4 rounded-xl border border-[#6FBF5B]/20 bg-[#0B3D2E]/40 backdrop-blur-sm hover:border-[#6FBF5B]/40 transition-all duration-500">
+                <Leaf className="w-8 h-8 text-[#6FBF5B]" />
+                <span className="font-body text-sm tracking-wider text-[#F4F1E9]/80">Tropical Garden</span>
+              </div>
+              <div className="flex flex-col items-center gap-3 p-4 rounded-xl border border-[#E8C46A]/20 bg-[#0B3D2E]/40 backdrop-blur-sm hover:border-[#E8C46A]/40 transition-all duration-500">
+                <Droplets className="w-8 h-8 text-[#E8C46A]" />
+                <span className="font-body text-sm tracking-wider text-[#F4F1E9]/80">Aquarium Dining</span>
+              </div>
+              <div className="flex flex-col items-center gap-3 p-4 rounded-xl border border-[#6FBF5B]/20 bg-[#0B3D2E]/40 backdrop-blur-sm hover:border-[#6FBF5B]/40 transition-all duration-500">
+                <Award className="w-8 h-8 text-[#6FBF5B]" />
+                <span className="font-body text-sm tracking-wider text-[#F4F1E9]/80">Award Winning</span>
+              </div>
             </motion.div>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.1, duration: 0.8 }}
-            className="pt-8 flex flex-col sm:flex-row items-center justify-center gap-5"
+            transition={{ delay: 1.2, duration: 0.8 }}
+            className="pt-12 flex flex-col sm:flex-row items-center justify-center gap-5"
           >
             <Link href="/menu">
               <Button 
                 size="lg" 
-                className="btn-primary-glow text-sm px-12 py-7 rounded-2xl uppercase tracking-[0.25em] font-body font-semibold"
+                className="text-sm px-12 py-7 rounded-2xl uppercase tracking-[0.25em] font-body font-semibold border-0"
+                style={{
+                  background: 'linear-gradient(135deg, #6FBF5B 0%, #4A9F3F 100%)',
+                  color: '#0B3D2E',
+                  boxShadow: '0 8px 32px rgba(111, 191, 91, 0.4), 0 0 60px rgba(111, 191, 91, 0.2)'
+                }}
                 data-testid="button-explore-menu"
               >
                 <UtensilsCrossed className="w-4 h-4 mr-3" />
@@ -233,7 +252,12 @@ export default function Home() {
             <Link href="/contact">
               <Button 
                 size="lg" 
-                className="btn-glass text-foreground text-sm px-12 py-7 rounded-2xl uppercase tracking-[0.25em] font-body font-medium"
+                className="text-sm px-12 py-7 rounded-2xl uppercase tracking-[0.25em] font-body font-medium"
+                style={{
+                  background: 'transparent',
+                  border: '1px solid rgba(232, 196, 106, 0.4)',
+                  color: '#E8C46A'
+                }}
                 data-testid="button-reserve"
               >
                 <Heart className="w-4 h-4 mr-3" />
@@ -247,19 +271,19 @@ export default function Home() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.8, duration: 1 }}
-          className="absolute bottom-12 left-1/2 -translate-x-1/2"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2"
         >
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
             className="flex flex-col items-center gap-3"
           >
-            <span className="text-xs tracking-[0.3em] uppercase text-muted-foreground/50">Scroll to Explore</span>
-            <div className="w-6 h-10 rounded-full border-2 border-primary/30 flex justify-center pt-2">
+            <span className="text-xs tracking-[0.3em] uppercase text-[#6FBF5B]/50">Scroll to Explore</span>
+            <div className="w-6 h-10 rounded-full border-2 border-[#6FBF5B]/30 flex justify-center pt-2">
               <motion.div 
                 animate={{ y: [0, 12, 0], opacity: [1, 0.3, 1] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                className="w-1.5 h-1.5 rounded-full bg-primary/60"
+                className="w-1.5 h-1.5 rounded-full bg-[#6FBF5B]/60"
               />
             </div>
           </motion.div>
