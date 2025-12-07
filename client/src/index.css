@@ -46,7 +46,7 @@
   /* Soft Cream #F4F1E9 - Body text background */
   --soft-cream: 43 31% 93%;
 
-  --background: 160 70% 14%;
+  --background: 160 30% 8%;
   --foreground: 43 31% 93%;
   
   --card: 27 43% 33%;
@@ -61,7 +61,7 @@
   --secondary: 27 43% 33%;
   --secondary-foreground: 43 31% 93%;
   
-  --muted: 160 50% 18%;
+  --muted: 160 20% 12%;
   --muted-foreground: 43 20% 70%;
   
   --accent: 43 73% 66%;
@@ -73,8 +73,8 @@
   --destructive: 0 65% 50%;
   --destructive-foreground: 43 31% 93%;
   
-  --border: 160 40% 20%;
-  --input: 160 40% 20%;
+  --border: 160 20% 15%;
+  --input: 160 20% 15%;
   --ring: 106 46% 55%;
   
   --radius: 0.75rem;
@@ -113,14 +113,14 @@ body {
 }
 
 .glass-panel {
-  background: linear-gradient(135deg, rgba(11, 61, 46, 0.95), rgba(11, 61, 46, 0.98));
+  background: linear-gradient(135deg, rgba(15, 30, 25, 0.95), rgba(15, 30, 25, 0.98));
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(111, 191, 91, 0.2);
+  border: 1px solid rgba(111, 191, 91, 0.15);
   box-shadow: 
     0 8px 32px rgba(0, 0, 0, 0.4),
     inset 0 1px 0 rgba(232, 196, 106, 0.08),
-    0 0 60px rgba(111, 191, 91, 0.05);
+    0 0 60px rgba(111, 191, 91, 0.03);
 }
 
 .glass-card {
@@ -145,10 +145,10 @@ body {
 }
 
 .glass-input {
-  background: rgba(11, 61, 46, 0.8);
+  background: rgba(15, 30, 25, 0.8);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(111, 191, 91, 0.2);
+  border: 1px solid rgba(111, 191, 91, 0.15);
   border-radius: 1rem;
   transition: all 0.4s ease;
 }
@@ -335,11 +335,11 @@ body {
 .jungle-gradient {
   background: linear-gradient(
     165deg,
-    hsl(160 70% 14%) 0%,
-    hsl(160 60% 16%) 25%,
-    hsl(160 50% 18%) 50%,
-    hsl(160 60% 16%) 75%,
-    hsl(160 70% 14%) 100%
+    hsl(160 30% 8%) 0%,
+    hsl(160 25% 10%) 25%,
+    hsl(160 20% 12%) 50%,
+    hsl(160 25% 10%) 75%,
+    hsl(160 30% 8%) 100%
   );
 }
 
@@ -383,8 +383,8 @@ body {
 
 .hero-overlay {
   background: 
-    linear-gradient(180deg, rgba(11, 61, 46, 0.4) 0%, rgba(11, 61, 46, 0.7) 50%, rgba(11, 61, 46, 0.95) 100%),
-    radial-gradient(ellipse at center top, transparent 0%, rgba(11, 61, 46, 0.5) 100%);
+    linear-gradient(180deg, rgba(15, 30, 25, 0.4) 0%, rgba(15, 30, 25, 0.7) 50%, rgba(15, 30, 25, 0.95) 100%),
+    radial-gradient(ellipse at center top, transparent 0%, rgba(15, 30, 25, 0.5) 100%);
 }
 
 .image-shine {
