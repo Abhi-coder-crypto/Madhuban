@@ -4,6 +4,13 @@ import { Link } from "wouter";
 import { Leaf, Droplets, UtensilsCrossed, Star, Clock, Users } from "lucide-react";
 import Footer from "@/components/Footer";
 
+import restaurantInterior1 from '@assets/stock_images/restaurant_interior__fde384fa.jpg';
+import restaurantInterior2 from '@assets/stock_images/restaurant_interior__614a4651.jpg';
+import restaurantInterior3 from '@assets/stock_images/restaurant_interior__270627ae.jpg';
+import indianFood1 from '@assets/stock_images/indian_food_platter__4302e642.jpg';
+import aquarium1 from '@assets/stock_images/fish_aquarium_restau_3c1118a7.jpg';
+import aquarium2 from '@assets/stock_images/fish_aquarium_restau_a361cd98.jpg';
+
 const features = [
   {
     icon: Leaf,
@@ -29,24 +36,24 @@ const features = [
 
 const testimonials = [
   {
-    name: "Priya Sharma",
-    initials: "PS",
-    role: "Food Critic",
-    text: "The most serene dining experience. The aquariums and plants create such a peaceful, luxurious atmosphere.",
+    name: "Aniket Sawant",
+    initials: "AS",
+    role: "Verified Guest",
+    text: "Eating veg Spicy food with quality Hygiene and natural ambient atmosphere. Totally satisfying",
     rating: 5
   },
   {
-    name: "Raj Malhotra",
-    initials: "RM",
-    role: "Regular Guest",
-    text: "Exquisite food, impeccable service, and the ambiance is truly one of a kind. A hidden gem.",
+    name: "Nilesh Kadam",
+    initials: "NK",
+    role: "Verified Guest",
+    text: "Must try this place - veg and non veg both are delicious. Staff is courteous.",
     rating: 5
   },
   {
-    name: "Anita Desai",
-    initials: "AD",
-    role: "Event Host",
-    text: "We celebrated our anniversary here. The fish swimming by our table made it magical.",
+    name: "Sushant Saka",
+    initials: "SS",
+    role: "Verified Guest",
+    text: "Everything was good - food, service and staff. Highly recommend Madhuban Green!",
     rating: 5
   }
 ];
@@ -55,32 +62,32 @@ const galleryItems = [
   { 
     title: "Aquarium Dining Hall", 
     description: "Floor-to-ceiling tanks with exotic fish",
-    icon: Droplets
+    image: aquarium1
   },
   { 
     title: "Botanical Garden", 
     description: "Lush tropical plants throughout",
-    icon: Leaf
+    image: restaurantInterior1
   },
   { 
     title: "Private Cabanas", 
     description: "Intimate spaces for special occasions",
-    icon: Users
+    image: restaurantInterior2
   },
   { 
-    title: "Chef's Table", 
-    description: "Watch our masters at work",
-    icon: UtensilsCrossed
+    title: "Signature Cuisine", 
+    description: "Authentic Indian flavors",
+    image: indianFood1
   },
   { 
-    title: "Koi Pond Terrace", 
-    description: "Outdoor seating by the water",
-    icon: Droplets
+    title: "Outdoor Terrace", 
+    description: "Al fresco dining experience",
+    image: restaurantInterior3
   },
   { 
-    title: "Zen Lounge", 
-    description: "Relax with nature sounds",
-    icon: Leaf
+    title: "Exotic Fish Collection", 
+    description: "Beautiful aquatic companions",
+    image: aquarium2
   }
 ];
 
@@ -88,6 +95,14 @@ export default function Home() {
   return (
     <div className="relative overflow-hidden">
       <section className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-6">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src={restaurantInterior1} 
+            alt="Madhuban Restaurant Interior" 
+            className="w-full h-full object-cover opacity-30"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
+        </div>
         <div className="z-10 text-center max-w-4xl mx-auto space-y-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -346,14 +361,13 @@ export default function Home() {
                 className="glass-card rounded-2xl overflow-hidden group cursor-pointer"
                 data-testid={`gallery-${item.title.toLowerCase().replace(/\s+/g, '-')}`}
               >
-                <div className="aspect-[4/3] bg-gradient-to-br from-primary/6 via-secondary/4 to-primary/8 flex items-center justify-center relative overflow-hidden">
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(90,160,130,0.06),transparent_70%)]" />
-                  <motion.div
-                    animate={{ y: [0, -4, 0] }}
-                    transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                  >
-                    <item.icon className="w-14 h-14 text-primary/30 group-hover:text-primary/45 transition-colors duration-500" />
-                  </motion.div>
+                <div className="aspect-[4/3] relative overflow-hidden">
+                  <img 
+                    src={item.image} 
+                    alt={item.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
                 <div className="p-6">
                   <h3 className="font-display text-lg text-foreground mb-2 group-hover:text-primary/90 transition-colors duration-500 tracking-wide">{item.title}</h3>

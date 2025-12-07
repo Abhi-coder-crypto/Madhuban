@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Leaf, Phone, MapPin, Clock, Instagram, Facebook, Mail } from "lucide-react";
+import { Leaf, Phone, MapPin, Clock, Instagram, Facebook, Mail, UtensilsCrossed } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -47,19 +47,19 @@ export default function Footer() {
           </div>
 
           <div className="space-y-6">
-            <h3 className="font-display text-base text-foreground tracking-wide">Hours</h3>
+            <h3 className="font-display text-base text-foreground tracking-wide">Hours & Services</h3>
             <div className="space-y-4 text-sm text-muted-foreground/60 font-body">
               <div className="flex items-center gap-3">
                 <Clock className="w-4 h-4 text-primary/40" />
-                <span>Mon - Thu: 11 AM - 10 PM</span>
+                <span>Open Daily: 11 AM - 11:30 PM</span>
               </div>
               <div className="flex items-center gap-3">
-                <Clock className="w-4 h-4 text-primary/40" />
-                <span>Fri - Sat: 11 AM - 11 PM</span>
+                <UtensilsCrossed className="w-4 h-4 text-primary/40" />
+                <span>All You Can Eat</span>
               </div>
               <div className="flex items-center gap-3">
-                <Clock className="w-4 h-4 text-primary/40" />
-                <span>Sunday: 12 PM - 9 PM</span>
+                <Leaf className="w-4 h-4 text-primary/40" />
+                <span>Outdoor Seating Available</span>
               </div>
             </div>
           </div>
@@ -69,11 +69,11 @@ export default function Footer() {
             <div className="space-y-4 text-sm text-muted-foreground/60 font-body">
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-primary/40 mt-0.5 shrink-0" />
-                <span>123 Garden Grove Lane, Nature District, New Delhi</span>
+                <span>Raj Silverstone, New Panvel Highway, Near McDonald's Katrap East, Badlapur, Maharashtra 421503</span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-primary/40" />
-                <span>+91 98765 43210</span>
+                <span>Contact for Reservations</span>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-primary/40" />
