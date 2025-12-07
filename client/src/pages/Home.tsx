@@ -13,25 +13,31 @@ import aquarium2 from '@assets/stock_images/fish_aquarium_restau_a361cd98.jpg';
 import freshIngredientsImg from '@assets/stock_images/fresh_organic_vegeta_7b6b8c18.jpg';
 import uniqueAmbianceImg from '@assets/stock_images/tropical_plants_rest_576923c6.jpg';
 import awardWinningImg from '@assets/stock_images/gold_award_trophy_ex_922e8285.jpg';
+import aquariumTablesImg from '@assets/image_1765083417100.png';
+import jungleInteriorImg from '@assets/image_1765083469747.png';
+import livingGreeneryImg from '@assets/stock_images/tropical_green_plant_1c878711.jpg';
+import aquariumViewsImg from '@assets/stock_images/colorful_tropical_fi_4df7ed6f.jpg';
+import authenticCuisineImg from '@assets/stock_images/indian_food_curry_di_4ec246e1.jpg';
+import privateEventsImg from '@assets/stock_images/private_dining_celeb_b0fe9d09.jpg';
 
 const features = [
   {
-    icon: Leaf,
+    image: livingGreeneryImg,
     title: "Living Greenery",
     description: "Dine among lush tropical plants and cascading botanical wonders"
   },
   {
-    icon: Droplets,
+    image: aquariumViewsImg,
     title: "Aquarium Views",
     description: "Elegant aquariums with graceful fish gliding past your table"
   },
   {
-    icon: UtensilsCrossed,
+    image: authenticCuisineImg,
     title: "Authentic Cuisine",
     description: "Traditional recipes crafted with the freshest seasonal ingredients"
   },
   {
-    icon: Users,
+    image: privateEventsImg,
     title: "Private Events",
     description: "Host memorable celebrations in our enchanting atmosphere"
   }
@@ -65,12 +71,12 @@ const galleryItems = [
   { 
     title: "Aquarium Dining Hall", 
     description: "Floor-to-ceiling tanks with exotic fish",
-    image: aquarium1
+    image: aquariumTablesImg
   },
   { 
     title: "Botanical Garden", 
     description: "Lush tropical plants throughout",
-    image: restaurantInterior1
+    image: jungleInteriorImg
   },
   { 
     title: "Private Cabanas", 
@@ -230,8 +236,8 @@ export default function Home() {
                 className="glass-card p-8 rounded-2xl text-center group"
                 data-testid={`feature-${feature.title.toLowerCase().replace(/\s+/g, '-')}`}
               >
-                <div className="w-14 h-14 mx-auto mb-6 rounded-xl bg-primary/8 flex items-center justify-center group-hover:bg-primary/12 transition-colors duration-500">
-                  <feature.icon className="w-6 h-6 text-primary/80" />
+                <div className="w-16 h-16 mx-auto mb-6 rounded-xl overflow-hidden border border-primary/20 group-hover:border-primary/40 transition-colors duration-500">
+                  <img src={feature.image} alt={feature.title} className="w-full h-full object-cover" />
                 </div>
                 <h3 className="font-display text-lg text-foreground mb-3 tracking-wide">{feature.title}</h3>
                 <p className="text-sm text-muted-foreground/70 leading-relaxed font-body">{feature.description}</p>
