@@ -318,8 +318,8 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="flex items-center gap-5">
-                  <div className="w-12 h-12 rounded-xl bg-gold/8 flex items-center justify-center">
-                    <Star className="w-5 h-5 text-gold/80" />
+                  <div className="w-12 h-12 rounded-xl bg-accent/8 flex items-center justify-center">
+                    <Star className="w-5 h-5 text-accent/80" />
                   </div>
                   <div>
                     <h3 className="font-display text-lg text-foreground tracking-wide">Award Winning</h3>
@@ -410,7 +410,7 @@ export default function Home() {
               >
                 <div className="flex gap-1 mb-6">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-gold/60 text-gold/60" />
+                    <Star key={i} className="w-4 h-4 fill-primary/60 text-primary/60" />
                   ))}
                 </div>
                 <p className="text-muted-foreground/80 mb-8 leading-relaxed font-heading italic text-base">
