@@ -146,13 +146,11 @@ const showcaseItems = [
 export default function Home() {
   return (
     <div className="relative overflow-hidden water-ripple-bg">
-      <ScrollResponsiveLeaves count={15} />
-      <Fireflies count={25} />
-      <ColorfulButterflies count={6} />
-      <ScrollGlowingFish count={8} />
-      <UnderwaterAmbience intensity="medium" />
-      <CoralDecorations position="left" />
-      <CoralDecorations position="right" />
+      <ScrollResponsiveLeaves count={8} />
+      <Fireflies count={12} />
+      <ColorfulButterflies count={3} />
+      <ScrollGlowingFish count={4} />
+      <UnderwaterAmbience intensity="light" />
       
       <section className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden pt-24 md:pt-28 lg:pt-32">
         <HeroBackground imageSrc={restaurantInterior1} />
