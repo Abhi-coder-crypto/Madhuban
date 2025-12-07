@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Droplets } from "lucide-react";
 import Footer from "@/components/Footer";
+import { Butterflies, Fireflies } from "@/components/NatureAnimations";
 
 import aquariumImg from '@assets/aqa_1765083959184.png';
 import jungleInteriorImg from '@assets/image_1765083469747.png';
@@ -16,6 +17,8 @@ export default function About() {
 
   return (
     <div className="relative">
+      <Butterflies count={5} />
+      <Fireflies count={12} />
       <div className="min-h-screen pt-40 pb-28 px-6 flex flex-col items-center">
         <div className="max-w-4xl w-full space-y-28">
           

@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Leaf, Droplets, UtensilsCrossed, Star, Clock, Sparkles, Heart, Award, ChefHat } from "lucide-react";
 import Footer from "@/components/Footer";
+import { FloatingFish, FallingLeaves, Fireflies } from "@/components/NatureAnimations";
 
 import restaurantInterior1 from '@assets/stock_images/restaurant_interior__fde384fa.jpg';
 import restaurantInterior2 from '@assets/stock_images/restaurant_interior__614a4651.jpg';
@@ -131,6 +132,9 @@ const showcaseItems = [
 export default function Home() {
   return (
     <div className="relative overflow-hidden water-ripple-bg">
+      <FallingLeaves count={10} />
+      <Fireflies count={15} />
+      
       <section className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-6">
         <div className="absolute inset-0 z-0">
           <img 
@@ -141,6 +145,8 @@ export default function Home() {
           <div className="absolute inset-0 hero-overlay" />
           <div className="absolute inset-0 bg-gradient-to-r from-background/60 via-transparent to-background/60" />
         </div>
+        
+        <FloatingFish count={4} />
 
         <div className="z-10 text-center max-w-6xl mx-auto">
           <motion.div
