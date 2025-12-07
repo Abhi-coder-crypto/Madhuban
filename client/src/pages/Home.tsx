@@ -22,6 +22,8 @@ import privateEventsImg from '@assets/stock_images/private_dining_celeb_b0fe9d09
 import foodImg from '@assets/food_1765083959183.png';
 import drinkImg from '@assets/drink_1765083959183.png';
 import aquariumImg from '@assets/aqa_1765083959184.png';
+import privateCabanasImg from '@assets/image_1765084555415.png';
+import outdoorTerraceImg from '@assets/image_1765084574850.png';
 
 const features = [
   {
@@ -88,7 +90,7 @@ const galleryItems = [
   { 
     title: "Private Cabanas", 
     description: "Intimate spaces for special occasions",
-    image: restaurantInterior2
+    image: privateCabanasImg
   },
   { 
     title: "Signature Cuisine", 
@@ -98,7 +100,7 @@ const galleryItems = [
   { 
     title: "Outdoor Terrace", 
     description: "Al fresco dining experience",
-    image: restaurantInterior3
+    image: outdoorTerraceImg
   },
   { 
     title: "Exotic Fish Collection", 
@@ -332,7 +334,6 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((feature, index) => {
-              const Icon = feature.icon;
               return (
                 <motion.div
                   key={feature.title}
@@ -340,18 +341,17 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1, duration: 0.6 }}
-                  className="glass-card p-8 rounded-2xl text-center group premium-glow"
+                  className="glass-card rounded-2xl text-center group premium-glow overflow-hidden"
                   data-testid={`feature-${feature.title.toLowerCase().replace(/\s+/g, '-')}`}
                 >
-                  <div className="w-16 h-16 mx-auto mb-6 rounded-xl overflow-hidden border border-primary/20 group-hover:border-primary/50 transition-all duration-500 relative">
-                    <img src={feature.image} alt={feature.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                    <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="aspect-[4/3] relative overflow-hidden image-shine">
+                    <img src={feature.image} alt={feature.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent" />
                   </div>
-                  <div className="flex items-center justify-center gap-2 mb-3">
-                    <Icon className="w-4 h-4 text-primary/60" />
-                    <h3 className="font-display text-lg text-foreground tracking-wide">{feature.title}</h3>
+                  <div className="p-6">
+                    <h3 className="font-display text-lg text-foreground tracking-wide mb-2">{feature.title}</h3>
+                    <p className="text-sm text-muted-foreground/70 leading-relaxed font-body">{feature.description}</p>
                   </div>
-                  <p className="text-sm text-muted-foreground/70 leading-relaxed font-body">{feature.description}</p>
                 </motion.div>
               );
             })}
@@ -383,8 +383,8 @@ export default function Home() {
               </p>
               <div className="flex flex-wrap gap-10 pt-6">
                 <div className="flex items-center gap-4 group">
-                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
-                    <UtensilsCrossed className="w-6 h-6 text-primary/80" />
+                  <div className="w-14 h-14 rounded-xl overflow-hidden border border-primary/20 group-hover:border-primary/40 transition-colors duration-300 image-shine">
+                    <img src={indianFood1} alt="Signature Dishes" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                   </div>
                   <div>
                     <p className="font-display text-3xl text-foreground tracking-wide">50+</p>
@@ -392,8 +392,8 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="flex items-center gap-4 group">
-                  <div className="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/20 transition-colors duration-300">
-                    <Clock className="w-6 h-6 text-secondary/80" />
+                  <div className="w-14 h-14 rounded-xl overflow-hidden border border-secondary/20 group-hover:border-secondary/40 transition-colors duration-300 image-shine">
+                    <img src={awardWinningImg} alt="Years of Excellence" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                   </div>
                   <div>
                     <p className="font-display text-3xl text-foreground tracking-wide">15+</p>

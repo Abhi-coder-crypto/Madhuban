@@ -1,12 +1,16 @@
 import { motion } from "framer-motion";
-import { Leaf, Droplets, Star } from "lucide-react";
+import { Droplets } from "lucide-react";
 import Footer from "@/components/Footer";
+
+import aquariumImg from '@assets/aqa_1765083959184.png';
+import jungleInteriorImg from '@assets/image_1765083469747.png';
+import awardWinningImg from '@assets/stock_images/gold_award_trophy_ex_922e8285.jpg';
 
 export default function About() {
   const features = [
-    { icon: Droplets, title: "Immersive", desc: "360° nature experience" },
-    { icon: Leaf, title: "Organic", desc: "Living green architecture" },
-    { icon: Star, title: "Premium", desc: "Exceptional quality" },
+    { image: aquariumImg, title: "Immersive", desc: "360° nature experience" },
+    { image: jungleInteriorImg, title: "Organic", desc: "Living green architecture" },
+    { image: awardWinningImg, title: "Premium", desc: "Exceptional quality" },
   ];
 
   return (
@@ -142,14 +146,17 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.6 }}
-                className="glass-card p-10 text-center rounded-2xl group"
+                className="glass-card text-center rounded-2xl group overflow-hidden"
                 data-testid={`about-feature-${feature.title.toLowerCase()}`}
               >
-                <div className="w-14 h-14 rounded-xl bg-primary/8 flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/12 transition-colors duration-500">
-                  <feature.icon className="w-6 h-6 text-primary/80" />
+                <div className="aspect-[4/3] relative overflow-hidden">
+                  <img src={feature.image} alt={feature.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent" />
                 </div>
-                <h3 className="font-display text-xl text-foreground mb-3 tracking-wide">{feature.title}</h3>
-                <p className="font-body text-muted-foreground/60 text-sm">{feature.desc}</p>
+                <div className="p-8">
+                  <h3 className="font-display text-xl text-foreground mb-3 tracking-wide">{feature.title}</h3>
+                  <p className="font-body text-muted-foreground/60 text-sm">{feature.desc}</p>
+                </div>
               </motion.div>
             ))}
           </section>
