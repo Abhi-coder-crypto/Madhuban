@@ -11,47 +11,50 @@ export default function Menu() {
 
   return (
     <div className="relative">
-      <div className="min-h-screen pt-36 pb-24 px-6">
+      <div className="min-h-screen pt-40 pb-28 px-6">
         <motion.div 
           initial={{ opacity: 0 }} 
           animate={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
           className="max-w-6xl mx-auto"
         >
-          <header className="text-center mb-16 space-y-5">
+          <header className="text-center mb-20 space-y-6">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="flex items-center justify-center gap-3 text-muted-foreground mb-4"
+              transition={{ duration: 1 }}
+              className="flex items-center justify-center gap-4 text-muted-foreground mb-6"
             >
-              <span className="w-12 h-px bg-primary/40" />
-              <span className="font-ui text-sm tracking-[0.3em] uppercase">Culinary</span>
-              <span className="w-12 h-px bg-primary/40" />
+              <span className="w-16 h-px bg-gradient-to-r from-transparent to-primary/40" />
+              <span className="font-body text-sm tracking-[0.35em] uppercase text-muted-foreground/80">Culinary</span>
+              <span className="w-16 h-px bg-gradient-to-l from-transparent to-primary/40" />
             </motion.div>
             <motion.h1 
-              initial={{ opacity: 0, y: -20 }}
+              initial={{ opacity: 0, y: -15 }}
               animate={{ opacity: 1, y: 0 }}
-              className="font-display text-5xl md:text-6xl text-foreground"
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="font-display text-5xl md:text-6xl text-foreground tracking-wide"
             >
               Our Menu
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              className="font-ui text-muted-foreground"
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className="font-body text-muted-foreground/80"
             >
               Fresh flavors crafted with care
             </motion.p>
           </header>
 
           <Tabs value={activeCategory} onValueChange={setActiveCategory} className="w-full">
-            <ScrollArea className="w-full whitespace-nowrap pb-6">
-              <TabsList className="bg-transparent border-b border-primary/10 h-auto p-0 inline-flex gap-1 md:gap-2">
+            <ScrollArea className="w-full whitespace-nowrap pb-8">
+              <TabsList className="bg-transparent border-b border-primary/8 h-auto p-0 inline-flex gap-1 md:gap-3">
                 {menuData.map((category) => (
                   <TabsTrigger
                     key={category.title}
                     value={category.title}
-                    className="bg-transparent data-[state=active]:bg-primary/10 data-[state=active]:text-primary text-muted-foreground font-ui text-sm tracking-wide rounded-lg px-4 py-2.5 transition-all duration-300 hover:text-foreground whitespace-nowrap"
+                    className="bg-transparent data-[state=active]:bg-primary/8 data-[state=active]:text-primary/90 text-muted-foreground/60 font-body text-sm tracking-wide rounded-xl px-5 py-3 transition-all duration-500 hover:text-foreground/80 whitespace-nowrap"
                     data-testid={`tab-${category.title.toLowerCase().replace(/\s+/g, '-')}`}
                   >
                     {category.title}
@@ -65,30 +68,30 @@ export default function Menu() {
               <TabsContent 
                 key={category.title} 
                 value={category.title} 
-                className="mt-10 animate-in fade-in duration-500"
+                className="mt-10 animate-in fade-in duration-700"
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                   {category.items.map((item, index) => (
                     <motion.div
-                      initial={{ opacity: 0, y: 20 }}
+                      initial={{ opacity: 0, y: 15 }}
                       animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: index * 0.03 }}
+                      transition={{ delay: index * 0.03, duration: 0.5 }}
                       key={item.name}
                       className="glass-card p-6 rounded-2xl group"
                       data-testid={`menu-item-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
                     >
                       <div className="flex justify-between items-start gap-4">
                         <div className="flex-1 min-w-0">
-                          <h3 className="font-display text-base text-foreground group-hover:text-primary transition-colors duration-300 truncate">
+                          <h3 className="font-display text-base text-foreground group-hover:text-primary/90 transition-colors duration-500 truncate tracking-wide">
                             {item.name}
                           </h3>
                           {item.description && (
-                            <p className="font-ui text-sm text-muted-foreground mt-1.5 line-clamp-2 leading-relaxed">
+                            <p className="font-body text-sm text-muted-foreground/60 mt-2 line-clamp-2 leading-relaxed">
                               {item.description}
                             </p>
                           )}
                           {item.tag && (
-                            <span className="inline-flex items-center gap-1.5 mt-3 text-xs font-ui text-primary/70 bg-primary/8 px-2.5 py-1 rounded-md">
+                            <span className="inline-flex items-center gap-1.5 mt-3 text-xs font-body text-primary/60 bg-primary/6 px-3 py-1.5 rounded-lg">
                               {item.tag.toLowerCase().includes('veg') ? (
                                 <Leaf className="w-3 h-3" />
                               ) : item.tag.toLowerCase().includes('full') ? (
@@ -99,7 +102,7 @@ export default function Menu() {
                           )}
                         </div>
                         <div className="shrink-0">
-                          <span className="font-display text-lg text-primary">
+                          <span className="font-display text-lg text-primary/80 tracking-wide">
                             {item.price}
                           </span>
                         </div>

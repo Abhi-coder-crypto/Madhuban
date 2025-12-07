@@ -15,10 +15,10 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 px-4 py-4 md:px-8 md:py-5">
-      <div className="max-w-6xl mx-auto flex items-center justify-between glass-panel rounded-2xl px-6 py-3.5">
-        <Link href="/" className="font-display text-xl md:text-2xl font-semibold tracking-wide text-foreground hover:text-primary transition-colors duration-300 cursor-pointer">
-          <span className="text-primary">M</span>ADHUBAN
+    <nav className="fixed top-0 left-0 right-0 z-50 px-4 py-5 md:px-8 md:py-6">
+      <div className="max-w-6xl mx-auto flex items-center justify-between glass-panel rounded-2xl px-7 py-4">
+        <Link href="/" className="font-display text-xl md:text-2xl font-medium tracking-[0.15em] text-foreground hover:text-primary/90 transition-colors duration-500 cursor-pointer">
+          <span className="text-primary/90">M</span>ADHUBAN
         </Link>
 
         <div className="hidden md:flex items-center gap-2">
@@ -27,10 +27,10 @@ export default function Navigation() {
               key={item.name} 
               href={item.path}
               className={cn(
-                "font-ui text-sm font-medium tracking-wide px-5 py-2 rounded-full transition-all duration-300",
+                "font-body text-sm font-medium tracking-wider px-5 py-2.5 rounded-xl transition-all duration-500",
                 location === item.path
-                  ? "nav-pill-active text-primary"
-                  : "text-muted-foreground hover:text-foreground hover:bg-white/5"
+                  ? "nav-pill-active text-primary/90"
+                  : "text-muted-foreground/70 hover:text-foreground hover:bg-white/3"
               )}
               data-testid={`nav-link-${item.name.toLowerCase()}`}
             >
@@ -40,7 +40,7 @@ export default function Navigation() {
         </div>
 
         <button
-          className="md:hidden text-foreground hover:text-primary transition-colors"
+          className="md:hidden text-foreground hover:text-primary/90 transition-colors duration-300"
           onClick={() => setIsOpen(!isOpen)}
           data-testid="mobile-menu-toggle"
         >
@@ -49,18 +49,18 @@ export default function Navigation() {
       </div>
 
       {isOpen && (
-        <div className="fixed inset-0 bg-background/98 backdrop-blur-xl z-40 flex items-center justify-center md:hidden animate-in fade-in duration-300">
-          <div className="flex flex-col items-center gap-8">
+        <div className="fixed inset-0 bg-background/98 backdrop-blur-xl z-40 flex items-center justify-center md:hidden animate-in fade-in duration-500">
+          <div className="flex flex-col items-center gap-10">
             {navItems.map((item) => (
               <Link 
                 key={item.name} 
                 href={item.path}
                 onClick={() => setIsOpen(false)}
                 className={cn(
-                  "font-display text-2xl tracking-wide transition-all duration-300",
+                  "font-display text-2xl tracking-widest transition-all duration-500",
                   location === item.path
-                    ? "text-primary"
-                    : "text-muted-foreground hover:text-foreground"
+                    ? "text-primary/90"
+                    : "text-muted-foreground/60 hover:text-foreground"
                 )}
                 data-testid={`mobile-nav-link-${item.name.toLowerCase()}`}
               >

@@ -1,33 +1,48 @@
-import { useRef, useState, useEffect, useMemo, Suspense } from 'react';
-import { Canvas, useFrame, useThree, extend } from '@react-three/fiber';
+import { useRef, useState, useEffect, useMemo, useCallback } from 'react';
+import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 
-function SoftParticles() {
+function GentleParticles() {
   const particlesRef = useRef<THREE.Points>(null);
   
-  const { positions, speeds, count } = useMemo(() => {
-    const count = 60;
+  const { positions, basePositions, speeds, count } = useMemo(() => {
+    const count = 40;
     const positions = new Float32Array(count * 3);
+    const basePositions = new Float32Array(count * 3);
     const speeds = new Float32Array(count);
     
     for (let i = 0; i < count; i++) {
-      positions[i * 3] = (Math.random() - 0.5) * 18;
-      positions[i * 3 + 1] = (Math.random() - 0.5) * 10;
-      positions[i * 3 + 2] = (Math.random() - 0.5) * 6 - 2;
-      speeds[i] = 0.08 + Math.random() * 0.12;
+      const x = (Math.random() - 0.5) * 16;
+      const y = Math.random() * 12 - 6;
+      const z = (Math.random() - 0.5) * 4 - 3;
+      
+      positions[i * 3] = x;
+      positions[i * 3 + 1] = y;
+      positions[i * 3 + 2] = z;
+      
+      basePositions[i * 3] = x;
+      basePositions[i * 3 + 1] = y;
+      basePositions[i * 3 + 2] = z;
+      
+      speeds[i] = 0.02 + Math.random() * 0.04;
     }
     
-    return { positions, speeds, count };
+    return { positions, basePositions, speeds, count };
   }, []);
 
   useFrame((state) => {
     if (particlesRef.current) {
       const pos = particlesRef.current.geometry.attributes.position.array as Float32Array;
+      const time = state.clock.elapsedTime;
+      
       for (let i = 0; i < count; i++) {
         const idx = i * 3;
-        pos[idx + 1] += speeds[i] * 0.015;
-        pos[idx] += Math.sin(state.clock.elapsedTime * 0.2 + i) * 0.002;
-        if (pos[idx + 1] > 5) pos[idx + 1] = -5;
+        pos[idx + 1] += speeds[i] * 0.008;
+        pos[idx] = basePositions[idx] + Math.sin(time * 0.15 + i * 0.5) * 0.3;
+        
+        if (pos[idx + 1] > 6) {
+          pos[idx + 1] = -6;
+        }
       }
       particlesRef.current.geometry.attributes.position.needsUpdate = true;
     }
@@ -38,16 +53,14 @@ function SoftParticles() {
       <bufferGeometry>
         <bufferAttribute
           attach="attributes-position"
-          count={count}
-          array={positions}
-          itemSize={3}
+          args={[positions, 3]}
         />
       </bufferGeometry>
       <pointsMaterial
-        size={0.06}
-        color="#5ab795"
+        size={0.04}
+        color="#7ab8a0"
         transparent
-        opacity={0.35}
+        opacity={0.25}
         sizeAttenuation
         blending={THREE.AdditiveBlending}
       />
@@ -55,93 +68,117 @@ function SoftParticles() {
   );
 }
 
-function KoiFish({ delay, yOffset }: { delay: number; yOffset: number }) {
-  const groupRef = useRef<THREE.Group>(null);
-  
-  useFrame((state) => {
-    if (groupRef.current) {
-      const t = state.clock.elapsedTime * 0.08 + delay;
-      const x = ((t * 3) % 28) - 14;
-      groupRef.current.position.x = x;
-      groupRef.current.position.y = Math.sin(t * 0.5) * 0.3 + yOffset;
-      groupRef.current.rotation.z = Math.sin(t * 1.2) * 0.06;
-      groupRef.current.rotation.y = x > 0 ? 0 : Math.PI;
-    }
-  });
-
-  return (
-    <group ref={groupRef} position={[-14, yOffset, -5]}>
-      <mesh scale={[0.6, 0.2, 0.1]}>
-        <sphereGeometry args={[1, 8, 6]} />
-        <meshBasicMaterial color="#1a3833" transparent opacity={0.18} />
-      </mesh>
-      <mesh position={[0.5, 0, 0]} scale={[0.3, 0.15, 0.08]}>
-        <coneGeometry args={[1, 1, 4]} />
-        <meshBasicMaterial color="#1a3833" transparent opacity={0.15} />
-      </mesh>
-    </group>
-  );
-}
-
-function UnderwaterBackground() {
+function LeafParticle({ startX, startY, delay }: { startX: number; startY: number; delay: number }) {
   const meshRef = useRef<THREE.Mesh>(null);
+  const initialY = useRef(startY);
   
   useFrame((state) => {
-    if (meshRef.current && meshRef.current.material) {
-      const mat = meshRef.current.material as THREE.MeshBasicMaterial;
-      const t = state.clock.elapsedTime * 0.05;
-      const r = 0.04 + Math.sin(t) * 0.01;
-      const g = 0.12 + Math.sin(t * 0.7) * 0.02;
-      const b = 0.11 + Math.sin(t * 0.5) * 0.015;
-      mat.color.setRGB(r, g, b);
+    if (meshRef.current) {
+      const t = state.clock.elapsedTime * 0.08 + delay;
+      meshRef.current.position.y = initialY.current - ((t * 0.8) % 14);
+      meshRef.current.position.x = startX + Math.sin(t * 0.4) * 0.8;
+      meshRef.current.rotation.z = Math.sin(t * 0.3) * 0.3;
+      
+      const yPos = meshRef.current.position.y;
+      meshRef.current.material = meshRef.current.material as THREE.MeshBasicMaterial;
+      (meshRef.current.material as THREE.MeshBasicMaterial).opacity = 
+        Math.max(0, Math.min(0.2, 0.2 - Math.abs(yPos) * 0.03));
+      
+      if (meshRef.current.position.y < -7) {
+        initialY.current = 7;
+      }
     }
   });
 
   return (
-    <mesh ref={meshRef} position={[0, 0, -10]}>
-      <planeGeometry args={[40, 25]} />
-      <meshBasicMaterial color="#0a1f1c" />
+    <mesh ref={meshRef} position={[startX, startY, -4]}>
+      <planeGeometry args={[0.15, 0.25]} />
+      <meshBasicMaterial color="#5a9880" transparent opacity={0.15} side={THREE.DoubleSide} />
     </mesh>
   );
 }
 
-function CausticEffect() {
+function WaterRipples() {
   const meshRef = useRef<THREE.Mesh>(null);
+  
   const texture = useMemo(() => {
     const canvas = document.createElement('canvas');
-    canvas.width = 256;
-    canvas.height = 256;
+    canvas.width = 512;
+    canvas.height = 512;
     const ctx = canvas.getContext('2d')!;
     
-    const gradient = ctx.createRadialGradient(128, 128, 0, 128, 128, 128);
-    gradient.addColorStop(0, 'rgba(90, 183, 149, 0.15)');
-    gradient.addColorStop(0.5, 'rgba(90, 183, 149, 0.05)');
-    gradient.addColorStop(1, 'rgba(90, 183, 149, 0)');
-    ctx.fillStyle = gradient;
-    ctx.fillRect(0, 0, 256, 256);
+    ctx.fillStyle = 'rgba(0, 0, 0, 0)';
+    ctx.fillRect(0, 0, 512, 512);
+    
+    for (let i = 0; i < 5; i++) {
+      const x = 128 + Math.random() * 256;
+      const y = 128 + Math.random() * 256;
+      const radius = 40 + Math.random() * 60;
+      
+      const gradient = ctx.createRadialGradient(x, y, 0, x, y, radius);
+      gradient.addColorStop(0, 'rgba(100, 160, 140, 0.03)');
+      gradient.addColorStop(0.5, 'rgba(100, 160, 140, 0.015)');
+      gradient.addColorStop(1, 'rgba(100, 160, 140, 0)');
+      
+      ctx.fillStyle = gradient;
+      ctx.beginPath();
+      ctx.arc(x, y, radius, 0, Math.PI * 2);
+      ctx.fill();
+    }
     
     const tex = new THREE.CanvasTexture(canvas);
     tex.wrapS = tex.wrapT = THREE.RepeatWrapping;
-    tex.repeat.set(4, 4);
+    tex.repeat.set(3, 3);
     return tex;
   }, []);
 
   useFrame((state) => {
     if (texture) {
-      texture.offset.x = Math.sin(state.clock.elapsedTime * 0.08) * 0.2;
-      texture.offset.y = Math.cos(state.clock.elapsedTime * 0.06) * 0.15;
+      const t = state.clock.elapsedTime;
+      texture.offset.x = Math.sin(t * 0.03) * 0.15;
+      texture.offset.y = Math.cos(t * 0.025) * 0.1;
     }
   });
 
   return (
-    <mesh ref={meshRef} position={[0, 0, -6]}>
-      <planeGeometry args={[30, 20]} />
+    <mesh ref={meshRef} position={[0, 0, -5]}>
+      <planeGeometry args={[28, 18]} />
       <meshBasicMaterial 
         map={texture} 
         transparent 
-        opacity={0.4}
+        opacity={0.5}
         blending={THREE.AdditiveBlending}
       />
+    </mesh>
+  );
+}
+
+function CalmBackground() {
+  const meshRef = useRef<THREE.Mesh>(null);
+  
+  const gradientTexture = useMemo(() => {
+    const canvas = document.createElement('canvas');
+    canvas.width = 2;
+    canvas.height = 512;
+    const ctx = canvas.getContext('2d')!;
+    
+    const gradient = ctx.createLinearGradient(0, 0, 0, 512);
+    gradient.addColorStop(0, '#0d2820');
+    gradient.addColorStop(0.3, '#102e28');
+    gradient.addColorStop(0.6, '#143530');
+    gradient.addColorStop(0.8, '#123028');
+    gradient.addColorStop(1, '#0d2820');
+    
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, 2, 512);
+    
+    return new THREE.CanvasTexture(canvas);
+  }, []);
+
+  return (
+    <mesh ref={meshRef} position={[0, 0, -10]}>
+      <planeGeometry args={[40, 25]} />
+      <meshBasicMaterial map={gradientTexture} />
     </mesh>
   );
 }
@@ -161,8 +198,8 @@ function Rig() {
   }, []);
 
   useFrame(() => {
-    target.set(mouse.current.x * 0.15, mouse.current.y * 0.1, 5);
-    camera.position.lerp(target, 0.012);
+    target.set(mouse.current.x * 0.08, mouse.current.y * 0.05, 5);
+    camera.position.lerp(target, 0.008);
     camera.lookAt(0, 0, 0);
   });
   
@@ -170,14 +207,24 @@ function Rig() {
 }
 
 function SceneContent() {
+  const leafPositions = useMemo(() => [
+    { x: -6, y: 5, delay: 0 },
+    { x: -3, y: 7, delay: 3 },
+    { x: 0, y: 4, delay: 6 },
+    { x: 3, y: 8, delay: 9 },
+    { x: 6, y: 6, delay: 12 },
+    { x: -5, y: 3, delay: 15 },
+    { x: 4, y: 5, delay: 18 },
+  ], []);
+
   return (
     <>
-      <UnderwaterBackground />
-      <CausticEffect />
-      <SoftParticles />
-      <KoiFish delay={0} yOffset={1} />
-      <KoiFish delay={12} yOffset={-0.5} />
-      <KoiFish delay={25} yOffset={-1.5} />
+      <CalmBackground />
+      <WaterRipples />
+      <GentleParticles />
+      {leafPositions.map((pos, i) => (
+        <LeafParticle key={i} startX={pos.x} startY={pos.y} delay={pos.delay} />
+      ))}
       <Rig />
     </>
   );
@@ -185,13 +232,21 @@ function SceneContent() {
 
 export default function Scene() {
   const [mounted, setMounted] = useState(false);
+  const [hasWebGL, setHasWebGL] = useState(true);
 
   useEffect(() => {
+    const canvas = document.createElement('canvas');
+    const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+    setHasWebGL(!!gl);
     setMounted(true);
   }, []);
 
-  if (!mounted) {
-    return <div className="fixed inset-0 z-0 bg-[#0a1f1c]" />;
+  if (!mounted || !hasWebGL) {
+    return (
+      <div className="fixed inset-0 z-0 underwater-gradient">
+        <div className="absolute inset-0 water-ripple-bg" />
+      </div>
+    );
   }
 
   return (
@@ -202,14 +257,16 @@ export default function Scene() {
         gl={{ 
           antialias: true,
           alpha: false,
-          powerPreference: 'default'
+          powerPreference: 'default',
+          failIfMajorPerformanceCaveat: false,
+        }}
+        onCreated={({ gl }) => {
+          gl.setClearColor(new THREE.Color('#0d2820'));
         }}
       >
-        <Suspense fallback={null}>
-          <SceneContent />
-        </Suspense>
+        <SceneContent />
       </Canvas>
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/90 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/80 pointer-events-none" />
     </div>
   );
 }
