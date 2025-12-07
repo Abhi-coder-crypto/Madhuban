@@ -134,12 +134,12 @@ export default function Home() {
       <section className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-6">
         <div className="absolute inset-0 z-0">
           <img 
-            src={restaurantExteriorImg} 
-            alt="Madhuban Greens Restaurant" 
+            src={restaurantInterior1} 
+            alt="Madhuban Restaurant Interior" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0B3D2E]/70 via-[#0B3D2E]/50 to-[#0B3D2E]/95" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0B3D2E]/40 via-transparent to-[#0B3D2E]/40" />
+          <div className="absolute inset-0 hero-overlay" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/60 via-transparent to-background/60" />
         </div>
 
         <div className="z-10 text-center max-w-6xl mx-auto">

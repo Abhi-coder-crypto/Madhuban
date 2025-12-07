@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import aquariumImg from '@assets/aqa_1765083959184.png';
 import jungleInteriorImg from '@assets/image_1765083469747.png';
 import awardWinningImg from '@assets/stock_images/gold_award_trophy_ex_922e8285.jpg';
+import restaurantExteriorImg from '@assets/image_1765114651153.png';
 
 export default function About() {
   const features = [
@@ -67,73 +68,21 @@ export default function About() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative aspect-square glass-card rounded-2xl overflow-hidden"
+              className="relative aspect-square glass-card rounded-2xl overflow-hidden group"
             >
-              <div className="absolute inset-0 bg-[#0e2a24]" />
+              <img 
+                src={restaurantExteriorImg} 
+                alt="Madhuban Greens Restaurant Exterior" 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0B3D2E]/90 via-[#0B3D2E]/30 to-transparent" />
+              <div className="absolute inset-0 border border-[#6FBF5B]/20 rounded-2xl" />
               
-              <div className="absolute inset-6 rounded-xl border border-primary/8 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-b from-[#102e28] to-[#0a201a]" />
-                
-                <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-[#0a201a]/80 to-transparent" />
-                
-                <motion.div 
-                  className="absolute bottom-4 left-8 w-16 h-8"
-                  animate={{ x: [0, 20, 0], y: [0, -3, 0] }}
-                  transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-                >
-                  <div className="w-full h-full bg-primary/15 rounded-full blur-sm" />
-                </motion.div>
-                
-                <motion.div 
-                  className="absolute bottom-12 right-12 w-12 h-6"
-                  animate={{ x: [0, -15, 0], y: [0, -2, 0] }}
-                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-                >
-                  <div className="w-full h-full bg-secondary/12 rounded-full blur-sm" />
-                </motion.div>
-                
-                <motion.div 
-                  className="absolute top-1/3 left-1/4 w-10 h-5"
-                  animate={{ x: [0, 25, 0], y: [0, -4, 0] }}
-                  transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                >
-                  <div className="w-full h-full bg-primary/10 rounded-full blur-sm" />
-                </motion.div>
-                
-                <div className="absolute bottom-0 left-0 right-0 h-1/4 flex justify-around items-end px-4 pb-2">
-                  <motion.div 
-                    className="w-4 h-16 bg-gradient-to-t from-primary/20 to-transparent rounded-t-full"
-                    animate={{ scaleY: [1, 1.1, 1] }}
-                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                  />
-                  <motion.div 
-                    className="w-3 h-12 bg-gradient-to-t from-secondary/15 to-transparent rounded-t-full"
-                    animate={{ scaleY: [1, 1.15, 1] }}
-                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                  />
-                  <motion.div 
-                    className="w-5 h-20 bg-gradient-to-t from-primary/18 to-transparent rounded-t-full"
-                    animate={{ scaleY: [1, 1.08, 1] }}
-                    transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                  />
-                  <motion.div 
-                    className="w-3 h-10 bg-gradient-to-t from-secondary/12 to-transparent rounded-t-full"
-                    animate={{ scaleY: [1, 1.12, 1] }}
-                    transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
-                  />
-                </div>
-                
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <Droplets className="w-10 h-10 text-primary/20 mx-auto mb-3" />
-                    <p className="font-display text-lg text-foreground/25 tracking-widest">AQUARIUM</p>
-                    <p className="font-body text-xs text-muted-foreground/30 mt-1">Dining Experience</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="absolute bottom-4 left-0 right-0 text-center">
-                <p className="text-xs text-muted-foreground/25 font-body tracking-[0.3em]">EST. 2010</p>
+              <div className="absolute bottom-0 left-0 right-0 p-8 text-center">
+                <Droplets className="w-10 h-10 text-[#6FBF5B]/60 mx-auto mb-3" />
+                <p className="font-display text-xl text-[#F4F1E9] tracking-widest">MADHUBAN</p>
+                <p className="font-body text-sm text-[#E8C46A]/80 mt-1">Dining Experience</p>
+                <p className="text-xs text-[#6FBF5B]/50 font-body tracking-[0.3em] mt-4">EST. 2010</p>
               </div>
             </motion.div>
           </div>
