@@ -34,35 +34,35 @@
 }
 
 :root {
-  --background: 160 35% 8%;
-  --foreground: 150 15% 92%;
+  --background: 25 15% 10%;
+  --foreground: 35 20% 92%;
   
-  --card: 160 30% 10%;
-  --card-foreground: 150 12% 88%;
+  --card: 25 12% 13%;
+  --card-foreground: 35 15% 88%;
   
-  --popover: 160 30% 10%;
-  --popover-foreground: 150 12% 88%;
+  --popover: 25 12% 13%;
+  --popover-foreground: 35 15% 88%;
   
-  --primary: 158 35% 38%;
-  --primary-foreground: 160 35% 8%;
+  --primary: 38 70% 50%;
+  --primary-foreground: 25 15% 10%;
   
-  --secondary: 175 40% 35%;
-  --secondary-foreground: 150 15% 95%;
+  --secondary: 32 60% 45%;
+  --secondary-foreground: 35 20% 95%;
   
-  --muted: 160 20% 15%;
-  --muted-foreground: 150 12% 55%;
+  --muted: 25 10% 18%;
+  --muted-foreground: 35 12% 60%;
   
-  --accent: 165 30% 32%;
-  --accent-foreground: 150 15% 95%;
+  --accent: 35 50% 40%;
+  --accent-foreground: 35 20% 95%;
   
-  --gold: 42 55% 50%;
+  --gold: 42 70% 55%;
   
   --destructive: 0 65% 50%;
-  --destructive-foreground: 150 15% 95%;
+  --destructive-foreground: 35 20% 95%;
   
-  --border: 160 25% 18%;
-  --input: 160 25% 18%;
-  --ring: 158 35% 38%;
+  --border: 30 15% 22%;
+  --input: 30 15% 22%;
+  --ring: 38 70% 50%;
   
   --radius: 0.75rem;
 }
@@ -100,65 +100,65 @@ body {
 }
 
 .glass-panel {
-  background: rgba(18, 40, 35, 0.75);
+  background: rgba(35, 28, 22, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(90, 140, 120, 0.12);
+  border: 1px solid rgba(180, 140, 90, 0.15);
   box-shadow: 
-    0 4px 20px rgba(0, 0, 0, 0.12),
+    0 4px 20px rgba(0, 0, 0, 0.15),
     inset 0 1px 0 rgba(255, 255, 255, 0.03);
 }
 
 .glass-card {
-  background: rgba(20, 45, 38, 0.6);
+  background: rgba(40, 32, 25, 0.7);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(90, 140, 120, 0.1);
+  border: 1px solid rgba(180, 140, 90, 0.12);
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
 }
 
 .glass-card:hover {
-  background: rgba(24, 50, 42, 0.7);
-  border-color: rgba(90, 140, 120, 0.18);
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
-  transform: translateY(-3px) scale(1.01);
+  background: rgba(50, 40, 30, 0.8);
+  border-color: rgba(200, 160, 100, 0.22);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px) scale(1.01);
 }
 
 .glass-input {
-  background: rgba(18, 40, 35, 0.5);
+  background: rgba(35, 28, 22, 0.6);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(90, 140, 120, 0.15);
+  border: 1px solid rgba(180, 140, 90, 0.18);
   border-radius: 1rem;
   transition: all 0.3s ease;
 }
 
 .glass-input:focus {
-  border-color: rgba(90, 140, 120, 0.35);
-  box-shadow: 0 0 0 2px rgba(90, 140, 120, 0.1);
+  border-color: rgba(200, 160, 100, 0.4);
+  box-shadow: 0 0 0 2px rgba(200, 160, 100, 0.12);
 }
 
 .btn-glass {
-  background: rgba(24, 50, 42, 0.55);
+  background: rgba(45, 36, 28, 0.7);
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(90, 140, 120, 0.18);
+  border: 1px solid rgba(200, 160, 100, 0.2);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .btn-glass:hover {
-  background: rgba(28, 58, 48, 0.65);
-  border-color: rgba(90, 140, 120, 0.3);
+  background: rgba(55, 45, 35, 0.8);
+  border-color: rgba(220, 180, 110, 0.35);
   transform: scale(1.02);
 }
 
 .nav-pill-active {
-  background: rgba(90, 140, 120, 0.12);
+  background: rgba(200, 160, 100, 0.15);
 }
 
 .gradient-text {
-  color: hsl(150 18% 78%);
+  color: hsl(38 30% 82%);
 }
 
 .text-depth {
@@ -234,20 +234,20 @@ body {
   position: absolute;
   inset: 0;
   background: 
-    radial-gradient(ellipse 120% 80% at 50% 100%, rgba(60, 120, 100, 0.08) 0%, transparent 60%),
-    radial-gradient(ellipse 100% 60% at 30% 80%, rgba(70, 130, 110, 0.05) 0%, transparent 50%),
-    radial-gradient(ellipse 80% 50% at 70% 90%, rgba(50, 110, 90, 0.06) 0%, transparent 45%);
+    radial-gradient(ellipse 120% 80% at 50% 100%, rgba(200, 160, 100, 0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 100% 60% at 30% 80%, rgba(180, 140, 90, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse 80% 50% at 70% 90%, rgba(220, 180, 110, 0.05) 0%, transparent 45%);
   pointer-events: none;
   animation: ripple 12s ease-in-out infinite;
 }
 
-.underwater-gradient {
+.warm-gradient {
   background: linear-gradient(
     165deg,
-    hsl(160 35% 8%) 0%,
-    hsl(162 38% 10%) 25%,
-    hsl(168 40% 12%) 50%,
-    hsl(172 35% 11%) 75%,
-    hsl(160 35% 8%) 100%
+    hsl(25 15% 10%) 0%,
+    hsl(28 18% 12%) 25%,
+    hsl(32 20% 14%) 50%,
+    hsl(30 16% 12%) 75%,
+    hsl(25 15% 10%) 100%
   );
 }
